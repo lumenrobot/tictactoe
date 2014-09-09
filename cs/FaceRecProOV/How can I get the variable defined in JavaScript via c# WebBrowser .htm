@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0163)http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js no-flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="WT.seg_1" content="Forums"><link href="./How can I get the variable defined in JavaScript via c# WebBrowser _files/a0bf38cea1a59bb3b34837c1eb02e543-9197fded265c51cc643f77c40ddf39e4-RequestReducedStyle.css" rel="Stylesheet" type="text/css"><meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    
+        <link rel="shortcut icon" href="http://i1.social.s-msft.com/Forums/GlobalResources/images/Msdn/favicon.ico" type="image/x-icon"> 
+    <meta name="CommunityInfo" content=" B=Msdn;A=Forums;L=en-US;">
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/jquery-1.7.1.min.js" type="text/javascript" language="javascript"></script>
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/198faff60a83dd768cacdf60118b0b19-6584225de39c1527dd5dd7bce11792ab-RequestReducedScript.js" type="text/javascript"></script>    
+    <title>
+    How can I get the variable defined in JavaScript via c# WebBrowser?
+</title>
+	
+        <!--[if IE 6]>
+    <link type="text/css" rel="Stylesheet" href="http://i3.social.s-msft.com/Forums/resources/styles/IE6Core.css?cver=0%0d%0a" />
+    <![endif]-->
+        <script type="text/javascript">
+    //<![CDATA[
+        var fms_site_culture = 'en-US'; var fms_site_lcid = '1033';
+    //]]>
+     </script>
+    
+    
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/resources.js" type="text/javascript" language="javascript"></script>
+    
+    
+<script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/prettify.js"></script>
+<script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/lang-ml.js"></script>
+<script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/lang-vb.js"></script>
+<script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/lang-sql.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        prettyPrint();
+    });
+</script>
+    <link rel="alternate" type="application/rss+xml" title="How can I get the variable defined in JavaScript via c# WebBrowser?" href="http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/bbf45a29-76f7-4aaf-aa61-61661061ecf8?outputAs=rss">
+
+        <meta name="Search.MSForums.Iroot" content="windows">
+        <meta name="Search.MSForums.CategoryID" content="6aa60cee-c71c-4b40-8c86-084864302d75">
+        <meta name="Search.MSForums.CategoryName" content="windowsforms">
+    
+            <link rel="canonical" href="http://social.msdn.microsoft.com/Forums/windows/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/action?threadDisplayName=how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser&forum=winforms">
+    
+
+<!--
+Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+-->
+    </head>
+<body class="Chrome en-us Forums " dir="ltr">
+    
+
+<div data-chameleon-template="epxheader"></div>
+<div data-chameleon-template="header">        
+    <input type="hidden" id="isHeaderBleeding" value="true" xmlns="http://www.w3.org/1999/xhtml">
+    <div id="ux-header" dir="ltr" class="ltr" xmlns="http://www.w3.org/1999/xhtml">
+        
+
+        <header>
+            <div class="row">
+                <div class="top mobile"></div>
+                <div class="left">
+                    <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://msdn.microsoft.com/en-us" id="27762_1" xmlns="http://www.w3.org/1999/xhtml">Developer Network</a>
+</div>     
+                    <div id="grip"></div>  
+                </div>
+                
+                <div class="right desktop">
+                    <div class="auxNav">
+                        <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://msdn.microsoft.com/dn369243" id="27762_5" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>   
+                        <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&clcid=0x409&slcid=0x409" id="27762_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>   
+                        
+
+        <div class="SignedOutProfileElement profileName"><a class="createProfileLink" href="" title=""></a></div>
+    <div class="signIn"><a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft" title="Sign in">Sign in</a></div>
+
+                    </div>
+                    <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" action="http://social.msdn.microsoft.com/Search" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this, this.title);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(this, this.title, &#39;SearchBoxOnFocus&#39;)" onblur="Epx.Controls.SearchBox.watermarkBlur(this, this.title, &#39;SearchBoxOnFocus&#39;)" autocomplete="off">
+      <input id="RefinementId" name="refinement" type="hidden" value="">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" title="Search MSDN"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); font-family: &#39;Segoe UI&#39;, Tahoma, Helvetica, sans-serif; font-size: 13px;"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    
+  </div>
+</div> 
+                </div>
+            </div>
+       
+            <div class="row" id="droor">
+                <div class="left">
+                            <nav>
+            <ul>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn308572" title="Home">Home</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn271881" title="Opportunity">Opportunity</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/dn338450" title=".NET">.NET</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338159" title="Cloud">Cloud</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn469160" title="Desktop">Desktop</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338268" title="Phone">Phone</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn308583" title="Tablet &amp; PC">Tablet &amp; PC</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338449" title="Web">Web</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn271880" title="Platform">Platform</a>
+
+                     </li>
+                     <li class="active current">
+
+                         <a href="http://msdn.microsoft.com/dn338064" title="Connect">Connect</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a></li>
+                                                 <li><a href="http://events.msdn.microsoft.com/en-us" title="Events">Events</a></li>
+                                                 <li class="current"><a href="http://social.msdn.microsoft.com/forums/" title="Forums">Forums</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn292944" title="Downloads">Downloads</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/dn369242" title="Developer tools">Developer tools</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn369240" title="SDKs">SDKs</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn369243" title="MSDN subscriptions">MSDN subscriptions</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/library" title="Library">Library</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://code.msdn.microsoft.com/" title="Samples">Samples</a>
+
+                     </li>
+            </ul>
+          
+        </nav>        
+       
+                </div>
+                <div class="right mobile"></div>
+                <div class="right">
+                    <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Join us</div>
+    <div class="Links">
+      <ul class="LinkColumn horizontal">
+        <li>
+          <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_430_7" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_430_8" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+        </li>
+        <li>
+          <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_430_9" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> 
+                </div>
+                <span id="singleCol"></span>
+                <span id="doubleCol"></span>
+            </div>
+        </header>
+    </div>
+    
+    
+<script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+/*<![CDATA[*/
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "http://i.msdn.microsoft.com", 
+	"js": "http://i2.msdn.microsoft.com", 
+	"css": "http://i3.msdn.microsoft.com"
+});
+/**/
+/*]]>*/
+</script><script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/SearchBox.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/SearchBox.jss" xmlns="http://www.w3.org/1999/xhtml"></script><script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/80c2f1781f973ba0006a5e1256c7ed38-557d0c4f95514a632d52048eecffc589-RequestReducedScript.js" type="text/javascript"></script></div>
+    <div id="BodyBackground" class="ltr">
+        <div id="JelloSizer">    
+            <div id="JelloExpander">
+                <div id="JelloWrapper">
+                    <div class="Clear"> </div>
+                    
+                   
+                    
+                    
+                    <div class="Clear"> </div>
+                          
+                    <div class="topleftcorner"></div>           
+                    <div class="toprightcorner"></div>                                
+                    <div class="alley"> <!-- Left Side -->
+                        <div class="wrapper"> <!-- Right Side -->
+                            <div class="inner">  
+                            
+                                                 
+                                <div class="Clear"></div>   
+
+
+                                
+                                
+                                
+                                
+                                <div id="MainContent" class="Msdn">
+                                    
+    
+
+    <div id="contentWrapper" class="contentWrapperFull">
+        <div id="content" class="contentFull">
+            <div id="forumsMessage"></div>
+            
+                   <input id="metricsurl" name="metricsurl" type="hidden" value="http://appexazureadmin.cloudapp.net/api/metrics">
+                   <input id="hdnreferrer" name="referrer" type="hidden" value="http://www.google.com/url?q=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG0DzF3kAWADdYFMEQVaNvb82w95w">
+            
+    <input type="hidden" name="IsTrusted" id="trustedU" value="False">
+<input type="hidden" name="IsTrustedCheckEnabled" id="isTrustedCheckEnabled" value="True">
+<input type="hidden" name="isSpamCheckEnabled" id="isSpamCheckEnabled" value="True">
+    <form id="__AjaxAntiForgeryForm" action="http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms#" method="post"><input name="__RequestVerificationToken" type="hidden" value="UDYtAP7PtjwQbKBosLvcgefOTavSkW7VG50QuQqOnuDn5LAzuB_NKWHVfXOA68lhyrolWKNF25YsNSEcAo9KnydhvQcpLs5tBeuDlnnKsSJqVve04ipONnFgQvuObnRgXPZXrQ2"></form>
+    
+     <div id="msdn-technet-en-thread">
+          <div id="topbar">
+    <div id="quickActions">
+        <div class="section">
+    <div id="askaquestion">
+        <a data-askurlbase="http://social.msdn.microsoft.com/Forums/en-US/newthread" class="btn askQuestionLink" title="Ask a question" href="http://social.msdn.microsoft.com/Forums/en-US/newthread?category=windowsforms&forum=winforms" name="ask" rel="nofollow">
+            Ask a question
+        </a>
+    </div>
+
+        </div>
+        <div class="section">
+    <div id="quickLinks" class="dropdown">
+        <div id="quickLinksText">
+            <span>Quick access</span>
+        </div>
+        <div id="quickLinksArrow" class="arrowcontainer">
+            <a class="arrowdown expanded"></a>
+        </div>
+        <ul class="popup">
+                    <li><a id="Home" href="http://social.msdn.microsoft.com/Forums/en-US/home">Forums home</a></li>
+                    <li><a id="AllUsers" href="http://social.msdn.microsoft.com/Forums/en-US/browseusers">Browse forums users</a></li>
+                    <li><a id="Faq" href="http://social.technet.microsoft.com/wiki/contents/articles/7359.forums-help-faq.aspx">FAQ</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+
+        </div>
+    </div>
+    <div id="searchActionsContainer">
+        <div id="searchActions">
+            <div id="topBarImportantInfoContainer">
+<div id="relatedThreadsLinkContainer">
+    <a id="relatedThreadsLink" href="http://social.msdn.microsoft.com/Forums/en-US/home?searchTerm=http%3A%2F%2Fsocial.msdn.microsoft.com%2FForums%2Fen-US%2Fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2Fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3Fforum%3Dwinforms" value="related threads link">Search related threads</a>
+</div>
+
+            </div>
+                        
+            <div id="threadsearchbarContainer">
+<form action="http://social.msdn.microsoft.com/Forums/en-US/home?sort=relevancedesc&brandIgnore=True" data-clientrefresh="true" data-refreshcontent="Search" id="homesearchform" method="get"><div class="searchbar">
+    <table class="searchboxinnercontainer">
+        <tbody><tr>
+            <td id="searchBoxTd">
+                <input id="searchbox" type="text" name="searchTerm" value="" class="watermark">
+            </td>
+            <td class="imageWidth">
+                <input id="searchimage" type="submit" value="">
+            </td>
+        </tr>
+    </tbody></table>
+</div>   </form>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+</div>
+
+        <script>
+            $(function() {
+                Forums.Homepage.wireTopBar('Search forum questions');
+            });
+        </script>
+    
+
+        <div id="threadPageSidebarContainer" class="sideBarContainer">
+            <div id="sidebar">
+    <section>
+        <h3>Answered by:</h3>
+        <div id="userCard" class="section">
+            <div class="profile-usercard-inline" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Molku&quot;, &quot;text&quot;:&quot;Molku&#39;s threads (last 60 days)&quot;}" data-profile-userid="df9bd72e-3806-49c4-846c-24f33414ca2f">
+            </div>
+        </div>
+    </section>
+        <section>
+            <div id="relatedThreads" data-url="/Forums/en-US/search/RelatedThreadsByThread?searchTerm=How%20can%20I%20get%20the%20variable%20defined%20in%20JavaScript%20via%20c%23%20WebBrowser%3F&amp;threadId=bbf45a29-76f7-4aaf-aa61-61661061ecf8&amp;allLanguages=False">
+
+
+
+    
+
+    <div>
+        <h4>Top related threads</h4>
+
+        
+        <ul class="content relatedThreads">
+
+                <li id="relatedThread_0">
+                    <div>
+                        <div class="alignMiddle">
+                            <a class="metricLink" href="http://social.msdn.microsoft.com/Forums/en-US/d51d22a6-d21d-4ea2-b018-b1fefbed7498/how-can-i-get-the-value-of-javascript-variable-if-i-am-using-webbrowser-control?forum=iewebdevelopment" target="_blank" title="Posted to Internet Explorer Web Development forum">How can I get the value of javascript variable if I am using WebBrowser control?</a>
+                        </div>
+                    </div>
+                    <div class="Clear"></div>
+                </li>
+                <li id="relatedThread_1">
+                    <div>
+                        <div class="alignMiddle">
+                            <a class="metricLink" href="http://social.msdn.microsoft.com/Forums/en-US/e4450a61-4582-431e-a08b-708c91739276/how-can-i-extract-a-javascript-array-from-a-webpage-in-webbrowser-c?forum=netfxjscript" target="_blank" title="Posted to JScript for the .NET Framework forum">How can I extract a Javascript array from a webpage in WebBrowser (c#)</a>
+                        </div>
+                    </div>
+                    <div class="Clear"></div>
+                </li>
+                <li id="relatedThread_2">
+                    <div>
+                        <div class="alignMiddle">
+                            <a class="metricLink" href="http://social.msdn.microsoft.com/Forums/en-US/4eddcf66-1901-41fb-aed1-89048d07cfbd/how-can-i-close-a-javascript-alert-in-webbrowser?forum=vbgeneral" target="_blank" title="Posted to Visual Basic forum">How can I close a javascript alert in WebBrowser</a>
+                        </div>
+                    </div>
+                    <div class="Clear"></div>
+                </li>
+                <li id="relatedThread_3">
+                    <div>
+                        <div class="alignMiddle">
+                            <a class="metricLink" href="http://social.msdn.microsoft.com/Forums/en-US/5f3188ae-420e-4b6b-aade-df490c9f0175/how-can-i-set-a-variable-in-a-webbrowser-control?forum=vcgeneral" target="_blank" title="Posted to Visual C++ forum">How Can I Set A Variable In A Webbrowser Control?</a>
+                        </div>
+                    </div>
+                    <div class="Clear"></div>
+                </li>
+                <li id="relatedThread_4">
+                    <div>
+                        <div class="alignMiddle">
+                            <a class="metricLink" href="http://social.msdn.microsoft.com/Forums/en-US/b8a48280-4bc2-4e62-afcc-ea0022e26d17/how-can-i-access-webbrowser-content-created-by-javascript?forum=winforms" target="_blank" title="Posted to Windows Forms General forum">How can I access WebBrowser content created by javascript?</a>
+                        </div>
+                    </div>
+                    <div class="Clear"></div>
+                </li>
+        </ul>
+    </div>
+</div>
+        </section>
+</div>
+        </div>
+        <div id="threadPageContentContainer">
+            <a id="toggleSidebar" href="javascript:void(0)" class="toggleOpen" data-state="1"></a>
+            <section>
+                <div id="threadPageContainer" class="section">
+                    
+
+
+
+             
+
+
+<h1>
+    <div class="threadIcon icon  none" title="">
+        <img class="threadIcon icon  none" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt=" none">
+    </div>
+    <span name="subject">How can I get the variable defined in JavaScript via c# WebBrowser?</span>
+                         
+        <a id="rssFeed" href="http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/bbf45a29-76f7-4aaf-aa61-61661061ecf8?outputAs=rss" rel="nofollow"><img src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" class="icon rss"></a>
+</h1>   
+
+
+                
+
+
+<div class="breadcrumb">
+    
+
+    
+    
+            <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="EyebrowElement">
+                <a id="categoryBreadcrumb" href="http://social.msdn.microsoft.com/Forums/en-US/home?category=windowsforms" itemprop="url">
+                    <span itemprop="title">Windows Forms forums</span> 
+                </a>
+            </div>
+        <span class="separator">&nbsp;&gt;&nbsp;</span>
+            <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="EyebrowElement forumBreadcrumb" data-forumdetailsurl="/Forums/api/category/getsingleforumdetails?forum=winforms">
+                <a id="forumBreadcrumb_winforms" href="http://social.msdn.microsoft.com/Forums/en-US/home?forum=winforms" itemprop="url">
+                    <span itemprop="title">Windows Forms General</span> 
+                
+                </a>
+                <div class="forumDetailsTip">
+                    
+<div id="forumDetailsTemplate" class="singleforumdetails">
+        <h3 class="header">
+            <a href="javascript:void(0);" rel="nofollow"><img class="icon rss" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif"></a>
+        </h3>
+        <div>
+            <ul class="manageForumSection">
+                <li><a href="javascript:void(0);" rel="nofollow" class="manageForumLink"></a></li>
+                <li><a href="javascript:void(0);" rel="nofollow" class="manageRolesLink"></a></li>
+                <li><a href="javascript:void(0);" rel="nofollow" class="addAnnouncementLink"></a></li>
+                <li><a class="addRemoveForum" title="Remove From My Forums" href="javascript:void(0);" rel="nofollow">Remove From My Forums</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    <div class="content"></div>
+    <div class="announcements"><span></span></div>
+</div>
+                </div>
+            </div>
+    
+    
+    
+    <div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+
+    
+
+
+    <ul id="rootMessage" class="message root">
+        
+
+        <h3>Question</h3>
+
+
+
+
+
+
+
+    <li id="bbf45a29-76f7-4aaf-aa61-61661061ecf8" class="message  root">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question root">
+                        <img class="icon  question root" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body">I have another question,&nbsp; any help is appreciate .<br>
+<br>
+How can I get the var of Java Script from c# webBrowser?&nbsp; Below is part code of the html:<br>
+<br>
+&lt;script type="text/javascript"&gt; <br>
+dojo.require("myrta_tbs_dojo.portlethelper.chooseTime");<br>
+var portletHelper_ns_Z7_0HEPVU271835D0IFC7B1OP10Q2_;<br>
+var containsPreferredDate = false;<br>
+var containsSelectedDate = true;<br>
+var weekDate = new Date('Mon Nov 25 00:00:00 EST 2013');<br>
+var <strong>timeslots</strong> = { "ajaxresult" : { "slots" : {<br>
+&nbsp; "nextAvailableDate" : "27/11/2013 14:50",<br>
+&nbsp; "listTimeSlot" : [ {<br>
+&nbsp;&nbsp;&nbsp; "startTime" : "25/11/2013 8:35",<br>
+&nbsp;&nbsp;&nbsp; "availability" : false,<br>
+&nbsp;&nbsp;&nbsp; "slotNumber" : null&nbsp; <br>
+&nbsp; }, {<br>
+&nbsp;&nbsp;&nbsp; "startTime" : "01/12/2013 15:35",<br>
+&nbsp;&nbsp;&nbsp; "availability" : false,<br>
+&nbsp;&nbsp;&nbsp; "slotNumber" : null<br>
+&nbsp; } ]<br>
+}}};<br>
+var stSelectedSlot = '2013/11/28 08:35';<br>
+var timetableInterval = [515, 890, 935];<br>
+var extendedRangeFlag = false;<br>
+&nbsp;<br>
+dojo.addOnLoad( function() {<br>
+&nbsp; portletHelper_ns_Z7_0HEPVU271835D0IFC7B1OP10Q2_ =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new myrta_tbs_dojo.portlethelper.chooseTime({portlet: portlet_ns_Z7_0HEPVU271835D0IFC7B1OP10Q2_});
+<br>
+&nbsp; <br>
+&nbsp;&nbsp;&nbsp; dojo.require("myrta_tbs_dojo.portlethelper.chooseLocation");<br>
+<br>
+how can I get the value of <strong>timeslots</strong> in c# code via <strong>WebBrowser</strong>? thanks.</div>
+                        <input type="hidden" id="bbf45a29-76f7-4aaf-aa61-61661061ecf8_attachments" value="">
+
+                </div>
+                
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Tuesday, November 05, 2013 2:41 PM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="55bf9592-8225-4af9-acee-d384acb7cd4e" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=liu%20wei0622&quot;, &quot;text&quot;:&quot;liu wei0622&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+
+    </ul>
+
+
+        <div id="answers" class="answers">
+            <h3>
+                Answers
+            </h3>
+            <ul id="answersList" class="message">
+
+
+
+
+
+
+
+    <li id="add491b5-b8b0-4af9-bf28-8b5279df3712" class="message  answer">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question answered">
+                        <img class="icon  question answered" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body"><p>The WebBrowser has&nbsp;a Document property and through it you can invoke scripts (apparently, I have never tried it). You might get it to work if you add a function to return timeslots and call InvokeScript on the Document.</p>
+<p>See:</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/be9zzz62(v=vs.110).aspx">http://msdn.microsoft.com/en-us/library/be9zzz62(v=vs.110).aspx</a></p><hr class="sig"><p>Bob - www.crowcoder.com</p></div>
+                        <input type="hidden" id="add491b5-b8b0-4af9-bf28-8b5279df3712_attachments" value="">
+
+                </div>
+                        <div>
+            <ul class="history">
+                    <li><span class="type">Marked as answer by</span>
+                            <a class="author" href="http://social.msdn.microsoft.com/profile/marvin%20guo%20-%20msft/?type=forum&referrer=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms" rel="nofollow" title="About Marvin Guo - MSFT"><span>Marvin Guo - MSFT</span><abbr class="affil">Moderator</abbr></a>
+                        <span class="date">Monday, November 18, 2013 8:53 AM</span>
+                    </li>
+            </ul>
+        </div>
+
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Tuesday, November 05, 2013 7:04 PM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="df9bd72e-3806-49c4-846c-24f33414ca2f" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Molku&quot;, &quot;text&quot;:&quot;Molku&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+
+
+
+
+
+
+
+    <li id="7edd58b0-b113-4bad-8362-02e22fa5a8fc" class="message  answer">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question answered">
+                        <img class="icon  question answered" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body"><p>Hi,</p>
+<p>If you want call function of javascript object and return value using mshtml,I suggest you to add HTML field&nbsp; in your HTML file and modified the &nbsp;JavaScript source code to save the timeslots,So that we can capture it .</p>
+<p>Modify your HTML document's body so that it contains a hidden input field with an id attribute of 'result'</p>
+<pre class="prettyprint prettyprinted" style=""><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">'hidden'</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">'result'</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">''</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+<p>Add the code in your JS function:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'result'</span><span class="pun">).</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><strong><span class="pln">timeslots</span></strong><span class="pun">;</span></pre>
+<p>And In you C# code:<br>
+</p>
+<pre class="prettyprint prettyprinted" style=""><span class="typ">Result</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(”</span><span class="pln">result</span><span class="pun">”).</span><span class="pln">getAttribute</span><span class="pun">(”</span><span class="pln">value</span><span class="pun">”);</span></pre>
+<p>By the way ,Like Molke said, if you can also use the HtmlDocument.InvokeScript Method to achive your goad:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="typ">HtmlDocument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> webBrowser1</span><span class="pun">.</span><span class="typ">Document</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> doc</span><span class="pun">.</span><span class="typ">InvokeScript</span><span class="pun">(</span><span class="str">"</span><strong><span class="str">timeslots</span></strong><span class="str"> "</span><span class="pun">).</span><span class="typ">ToString</span><span class="pun">()</span><span class="pln"> </span><span class="pun">;</span></pre><hr class="sig"><p>We are trying to better understand customer views on social support experience, so your participation in this interview project would be greatly appreciated if you have time. Thanks for helping make community forums a great place.
+<br>
+Click <a href="http://support.microsoft.com/common/survey.aspx?showpage=1&scid=sw%3Ben%3B3559&theme=tech">
+HERE</a> to participate the survey.</p></div>
+                        <input type="hidden" id="7edd58b0-b113-4bad-8362-02e22fa5a8fc_attachments" value="">
+
+                </div>
+                        <div>
+            <ul class="history">
+                    <li><span class="type">Marked as answer by</span>
+                            <a class="author" href="http://social.msdn.microsoft.com/profile/marvin%20guo%20-%20msft/?type=forum&referrer=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms" rel="nofollow" title="About Marvin Guo - MSFT"><span>Marvin Guo - MSFT</span><abbr class="affil">Moderator</abbr></a>
+                        <span class="date">Monday, November 18, 2013 8:53 AM</span>
+                    </li>
+            </ul>
+        </div>
+
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Wednesday, November 13, 2013 7:21 AM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="3290d3e7-9788-44ce-93fa-54bcd24ab1ac" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Marvin%20Guo%20-%20MSFT&quot;, &quot;text&quot;:&quot;Marvin Guo - MSFT&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+Moderator                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+                        
+            </ul>
+        </div>
+
+      <div id="allReplies" class="replies">
+            <h3>
+                All replies
+            </h3>
+
+
+
+
+
+    <ul class="message">
+
+
+
+
+
+
+
+    <li id="add491b5-b8b0-4af9-bf28-8b5279df3712" class="message  answer">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question answered">
+                        <img class="icon  question answered" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body"><p>The WebBrowser has&nbsp;a Document property and through it you can invoke scripts (apparently, I have never tried it). You might get it to work if you add a function to return timeslots and call InvokeScript on the Document.</p>
+<p>See:</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/be9zzz62(v=vs.110).aspx">http://msdn.microsoft.com/en-us/library/be9zzz62(v=vs.110).aspx</a></p><hr class="sig"><p>Bob - www.crowcoder.com</p></div>
+                        <input type="hidden" id="add491b5-b8b0-4af9-bf28-8b5279df3712_attachments" value="">
+
+                </div>
+                        <div>
+            <ul class="history">
+                    <li><span class="type">Marked as answer by</span>
+                            <a class="author" href="http://social.msdn.microsoft.com/profile/marvin%20guo%20-%20msft/?type=forum&referrer=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms" rel="nofollow" title="About Marvin Guo - MSFT"><span>Marvin Guo - MSFT</span><abbr class="affil">Moderator</abbr></a>
+                        <span class="date">Monday, November 18, 2013 8:53 AM</span>
+                    </li>
+            </ul>
+        </div>
+
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Tuesday, November 05, 2013 7:04 PM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="df9bd72e-3806-49c4-846c-24f33414ca2f" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Molku&quot;, &quot;text&quot;:&quot;Molku&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+
+
+
+
+
+
+
+    <li id="c6b83625-5f44-4ef6-a8f2-d2153e103db9" class="message ">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question reply">
+                        <img class="icon  question reply" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body">thanks for your response. I can get the variable using below code (using mshtml)<br>
+<br>
+IHTMLDocument2 vDocument = this.webBrowser1.Document.DomDocument as IHTMLDocument2; IHTMLWindow2 vWindow = (IHTMLWindow2)vDocument.parentWindow;<br>
+Type vWindowType = vWindow.GetType();<br>
+object testText = vWindowType.InvokeMember("<span style="color:red"><strong>timeslots</strong></span>",<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BindingFlags.GetProperty, null, vWindow, new object[] { });<br>
+<br>
+but how can I parse the testText to get the value? the type is MarshalByRefObject.<br>
+does anyone know it? Thanks.</div>
+                        <input type="hidden" id="c6b83625-5f44-4ef6-a8f2-d2153e103db9_attachments" value="">
+
+                </div>
+                
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Wednesday, November 06, 2013 2:42 PM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="55bf9592-8225-4af9-acee-d384acb7cd4e" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=liu%20wei0622&quot;, &quot;text&quot;:&quot;liu wei0622&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+
+
+
+
+
+
+
+    <li id="7edd58b0-b113-4bad-8362-02e22fa5a8fc" class="message  answer">
+        <div class="messageContentContainer">
+        
+        
+            <div class="messageSidebar">
+
+                <div class="iconWrapper">
+                    <div class="status messageIcon  question answered">
+                        <img class="icon  question answered" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif" alt="Question">
+                    </div>
+                </div>
+                <div class="votingouterbox">                <div class="voting">
+                            <a class="voteuphreflink" name="voteup" title="Vote as helpful" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">
+                                <img class="icon voteup" alt="Sign in to vote" title="Sign in to vote" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/trans.gif">
+                                <div class="votenumber" style="display: block;">0</div>
+                            </a>
+
+                </div>
+                <div class="votinglabel">
+                    <span class="votinglabel type">
+                                <a title="Sign in to vote" href="https://login.live.com/login.srf?wa=wsignin1.0&wtrealm=social.msdn.microsoft.com&wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&wp=MBI_FED_SSL&wlcxt=microsoft%24microsoft%24microsoft">Sign in to vote</a>
+                    </span>
+                </div>
+</div>
+            </div>
+        
+            <div class="messageContent">
+                <div class="container">
+                    <div class="body"><p>Hi,</p>
+<p>If you want call function of javascript object and return value using mshtml,I suggest you to add HTML field&nbsp; in your HTML file and modified the &nbsp;JavaScript source code to save the timeslots,So that we can capture it .</p>
+<p>Modify your HTML document's body so that it contains a hidden input field with an id attribute of 'result'</p>
+<pre class="prettyprint prettyprinted" style=""><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">'hidden'</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">'result'</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">''</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+<p>Add the code in your JS function:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'result'</span><span class="pun">).</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> </span><strong><span class="pln">timeslots</span></strong><span class="pun">;</span></pre>
+<p>And In you C# code:<br>
+</p>
+<pre class="prettyprint prettyprinted" style=""><span class="typ">Result</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(”</span><span class="pln">result</span><span class="pun">”).</span><span class="pln">getAttribute</span><span class="pun">(”</span><span class="pln">value</span><span class="pun">”);</span></pre>
+<p>By the way ,Like Molke said, if you can also use the HtmlDocument.InvokeScript Method to achive your goad:</p>
+<pre class="prettyprint prettyprinted" style=""><span class="typ">HtmlDocument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> webBrowser1</span><span class="pun">.</span><span class="typ">Document</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> doc</span><span class="pun">.</span><span class="typ">InvokeScript</span><span class="pun">(</span><span class="str">"</span><strong><span class="str">timeslots</span></strong><span class="str"> "</span><span class="pun">).</span><span class="typ">ToString</span><span class="pun">()</span><span class="pln"> </span><span class="pun">;</span></pre><hr class="sig"><p>We are trying to better understand customer views on social support experience, so your participation in this interview project would be greatly appreciated if you have time. Thanks for helping make community forums a great place.
+<br>
+Click <a href="http://support.microsoft.com/common/survey.aspx?showpage=1&scid=sw%3Ben%3B3559&theme=tech">
+HERE</a> to participate the survey.</p></div>
+                        <input type="hidden" id="7edd58b0-b113-4bad-8362-02e22fa5a8fc_attachments" value="">
+
+                </div>
+                        <div>
+            <ul class="history">
+                    <li><span class="type">Marked as answer by</span>
+                            <a class="author" href="http://social.msdn.microsoft.com/profile/marvin%20guo%20-%20msft/?type=forum&referrer=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms" rel="nofollow" title="About Marvin Guo - MSFT"><span>Marvin Guo - MSFT</span><abbr class="affil">Moderator</abbr></a>
+                        <span class="date">Monday, November 18, 2013 8:53 AM</span>
+                    </li>
+            </ul>
+        </div>
+
+                <div class="messageFooter">
+                     <div class="actions">
+                        <div class="date">Wednesday, November 13, 2013 7:21 AM</div>
+                        <div class="menu message">
+                                            <div value="reply">
+                    <a href="javascript:void();" title="Reply" name="reply" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Reply</a>
+                </div>
+                    <div class="separator"><span>|</span></div>
+                <div value="quote">
+                    <a href="javascript:void();" title="" name="quote" rel="nofollow" url="https://login.live.com/login.srf?wa=wsignin1.0&amp;wtrealm=social.msdn.microsoft.com&amp;wreply=https%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms%26prof%3drequired%26stoAI%3d10&amp;wp=MBI_FED_SSL&amp;wlcxt=microsoft%24microsoft%24microsoft">
+                        Quote</a>
+                </div>
+
+                                         <div class="separator"><span>|</span></div>
+        <div class="abusive">
+        </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="userInfo">
+                        <div class="profile-usercard-mini" data-profile-userid="3290d3e7-9788-44ce-93fa-54bcd24ab1ac" data-profile-usercard-customlink="{&quot;href&quot;:&quot;http://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Marvin%20Guo%20-%20MSFT&quot;, &quot;text&quot;:&quot;Marvin Guo - MSFT&#39;s threads (last 60 days)&quot;}">
+                            <div class="profile-mini-content">
+Moderator                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li> 
+    <div class="clear"></div>
+    </ul>
+
+        </div>
+
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>  
+    <div id="nrSurvey">
+        
+<script type="text/javascript">
+    if (!$.Microsoft) $.Microsoft = {};
+    if (!$.Microsoft.Mtps) $.Microsoft.Mtps = {};
+    if (!$.Microsoft.Mtps.NetReflectorInit)
+        $.Microsoft.Mtps.NetReflectorInit = {
+            surveyUrl: 'http://support.microsoft.com/common/survey.aspx?scid=sw%3ben%3b3763&altstyle=narrow&renderoption=overridedefault&theme=msdn&url=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms&P0=1951d2ee-e302-4af7-b219-b23d38efb268',
+            throttleRate: "5.00",
+            privacyStatementText: "Privacy statement",
+            trackerWindowText: "<p>Please do not close this window.</p><p>Thank you! The survey will appear here when you've completed your visit, so <b>please do not close this window</b>.</p>",
+            logoUrl: 'http://js.microsoft.com/library/svy/sto/msdn-logo-stripe.gif',
+            closeButtonUrl: 'http://js.microsoft.com/library/svy/sto/msdn-close.gif',
+            topBarUrl: 'http://js.microsoft.com/library/svy/sto/top-stripe.gif',
+            bottomBarUrl: 'http://js.microsoft.com/library/svy/sto/bottom-stripe.gif',
+            blankPage: 'http://social.msdn.microsoft.com/forums/blank.htm',
+            showSurveyToComscoreUser: 'no'
+        };
+</script>
+<link href="./How can I get the variable defined in JavaScript via c# WebBrowser _files/NetReflector.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+
+    setTimeout("Forums.loadScript('http://i2.social.s-msft.com/Forums/resources/NetReflector/NetReflector.js?cver=0%0d%0a')", 1000);
+</script>
+<div id="divNRMain" style="position: fixed; display: none; background-color: White;
+    z-index: 1001;">
+    <table width="360" cellpadding="3" cellspacing="0" border="0" bgcolor="#FFFFFF">
+        <tbody><tr>
+            <td style="padding: 3px;">
+                <table width="100%" cellpadding="1" cellspacing="0" border="0" bgcolor="#999999">
+                    <tbody><tr>
+                        <td style="padding: 1px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+                                <tbody><tr valign="top">
+                                    <td>
+                                        <img src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/msdn-logo-stripe.gif"><img id="imgNRClose" border="0" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/msdn-close.gif"><br>
+                                        <img src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/top-stripe.gif">
+                                        <table width="100%" cellpadding="5" cellspacing="0">
+                                            <tbody><tr>
+                                                <td style="padding: 2px">
+                                                    <div>
+                                                        <p>Microsoft is conducting an online survey to understand your opinion of the Msdn Web site. If you choose to participate, the online survey will be presented to you when you leave the Msdn Web site.</p><p>Would you like to participate?</p>
+                                                    </div>
+                                                    <div align="center">
+                                                        <input id="btnNRYes" type="button" value="  Yes  ">&nbsp;&nbsp;
+                                                        <input id="btnNRNo" type="button" value=" No ">
+                                                    </div>
+                                                    <div>
+                                                        <a href="http://privacy.microsoft.com/en-us/default.mspx" target="_blank">
+                                                            Privacy statement</a></div>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <img src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/bottom-stripe.gif">
+                                        <input type="hidden" id="hdnSurveyUrl" value="http://support.microsoft.com/common/survey.aspx?scid=sw%3ben%3b3763&amp;altstyle=narrow&amp;renderoption=overridedefault&amp;theme=msdn&amp;url=http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms&amp;P0=1951d2ee-e302-4af7-b219-b23d38efb268">
+                                        <input type="hidden" id="hdnLogoUrl" value="http://js.microsoft.com/library/svy/sto/msdn-logo-stripe.gif">
+                                        <input type="hidden" id="hdnTopStripUrl" value="http://js.microsoft.com/library/svy/sto/top-stripe.gif">
+                                        <input type="hidden" id="hdnBtmStripUrl" value="http://js.microsoft.com/library/svy/sto/bottom-stripe.gif">
+                                        <input type="hidden" id="hdnTrackerText" value="&lt;p&gt;Please do not close this window.&lt;/p&gt;&lt;p&gt;Thank you! The survey will appear here when you&#39;ve completed your visit, so &lt;b&gt;please do not close this window&lt;/b&gt;.&lt;/p&gt;">
+                                        <input type="hidden" id="hdnPrivacyText" value="Privacy statement">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+
+    </div>  
+    
+                                    <div class="Clear"></div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="Clearbottom"></div>          
+                    <div class="bottomleftcorner"></div>            
+                    <div class="bottomrightcorner"></div> 
+                    
+                     
+                    
+
+                           
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<div data-chameleon-template="epxfooter"></div>
+<div data-chameleon-template="footer">        
+<div id="ux-footer" class="" style="" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+    <footer class="top">
+        <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Dev centers</div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://msdn.microsoft.com/windows" id="27861_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+        </li>
+        <li>
+          <a href="http://dev.windowsphone.com/" id="27861_2" class="windowsPurple" xmlns="http://www.w3.org/1999/xhtml">Windows Phone</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/office" id="27861_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+        </li>
+        <li>
+          <a href="http://www.windowsazure.com/en-us/documentation/" id="27861_4" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows Azure</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/vstudio" id="27861_5" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/aa937802" id="27861_6" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>    
+        <div id="rightLinks">
+            <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Learning resources</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://www.microsoftvirtualacademy.com/" id="27861_14" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+        </li>
+        <li>
+          <a href="http://channel9.msdn.com/" id="27861_16" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+        </li>
+        <li>
+          <a href="http://www.interoperabilitybridges.com/" id="27861_17" xmlns="http://www.w3.org/1999/xhtml">Interoperability Bridges</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/magazine/" id="CenterLinks1_427_33" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Community</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://social.msdn.microsoft.com/forums/en-us/home" id="27861_19" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+        </li>
+        <li>
+          <a href="http://blogs.msdn.com/b/developer-tools/" id="27861_20" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+        </li>
+        <li>
+          <a href="http://www.codeplex.com/" id="27861_22" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Support</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://msdn.microsoft.com/hh361695" id="CenterLinks3_427_34" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+        </li>
+        <li>
+          <a href="http://support.microsoft.com/" id="27861_24" xmlns="http://www.w3.org/1999/xhtml">Other support options</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml" class="nth-child-4n">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Programs</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://www.microsoft.com/bizspark/" id="27861_27" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+        </li>
+        <li>
+          <a href="https://www.dreamspark.com/" id="27861_28" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</a>
+        </li>
+        <li>
+          <a href="https://www.microsoft.com/faculty" id="27861_29" xmlns="http://www.w3.org/1999/xhtml">Faculty Connection</a>
+        </li>
+        <li>
+          <a href="http://www.microsoft.com/student/" id="CenterLinks4_427_32" xmlns="http://www.w3.org/1999/xhtml">Microsoft Student</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+        </div>
+    </footer>
+    
+    <footer class="bottom">
+        <span class="localeContainer">
+                <form class="selectLocale" id="selectLocaleForm" action="http://msdn.microsoft.com/en-US/selectlocale-dmc">
+        <input type="hidden" name="fromPage" value="http%3a%2f%2fsocial.msdn.microsoft.com%2fForums%2fen-US%2fbbf45a29-76f7-4aaf-aa61-61661061ecf8%2fhow-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser%3fforum%3dwinforms">
+        <a href="http://social.msdn.microsoft.com/Forums/en-US/bbf45a29-76f7-4aaf-aa61-61661061ecf8/how-can-i-get-the-variable-defined-in-javascript-via-c-webbrowser?forum=winforms#" onclick="$(&#39;#selectLocaleForm&#39;).submit();return false;" title="Change your language">United States (English)</a>
+    </form>    
+
+
+        </span>
+        
+        <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn horizontal">
+        <li>
+          <a href="http://msdn.microsoft.com/newsletter.aspx" id="27861_8" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/dn529288" id="27861_10" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/cc300389.aspx" id="27861_11" xmlns="http://www.w3.org/1999/xhtml">Terms of Use</a>
+        </li>
+        <li>
+          <a href="http://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="27861_12" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>    
+        <span class="logoLegal">
+            <span class="logo"></span>
+            <span class="copyright">© 2014 Microsoft</span>
+        </span>
+    </footer>
+</div>
+    
+<script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+/*<![CDATA[*/
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "http://i.msdn.microsoft.com", 
+	"js": "http://i2.msdn.microsoft.com", 
+	"css": "http://i3.msdn.microsoft.com"
+});
+/**/
+/*]]>*/
+</script><script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/Footer.js" xmlns="http://www.w3.org/1999/xhtml"></script></div>  
+    <div data-chameleon-template="megablade"></div>
+    
+    
+    
+
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/core.js" type="text/javascript" language="javascript"></script>
+    <script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/jquery-impromptu.3.1.min.js"></script>
+   
+    
+<script type="text/javascript" language="javascript">
+var railItems = ["/Forums/en-US/rightrailannouncement/Msdn/6aa60cee-c71c-4b40-8c86-084864302d75"];
+
+</script>
+
+    <script type="text/javascript" language="javascript">
+            var pageData = {"validUser":false,"autoSubscribe":false};
+    </script>
+     <script type="text/javascript" language="javascript">
+         var userEmailConfigured = false;
+     </script>  
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/messages.js" type="text/javascript" language="javascript"></script>
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/forumdetails.js" type="text/javascript" language="javascript"></script>
+    <script>
+        $(document).ready(function () {
+            Forums.ThreadPage.wirePageElements('Search forum questions');
+            Forums.ForumDetails.wireAllBreadcrumbs();
+        });
+    </script>
+
+    
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/webtrends.js" type="text/javascript"></script><script type="text/javascript" src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/wtid.js"><\/script>
+    <noscript>
+        <img alt="" border="0" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsour5e80000008ybade4ttg_1i1l/njs.gif?dcsuri=/nojavascript&amp;WT.js=No">
+    </noscript>
+     
+    <script type="text/javascript" src="http://js.microsoft.com/library/svy/sto/broker.js"></script>    
+    
+                <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/loader.js" type="text/javascript" language="javascript"></script>
+
+    
+    
+    <script src="./How can I get the variable defined in JavaScript via c# WebBrowser _files/1137f6ae0c6c7e7ceac4da6ce50ab853-6143d45df2ee01b890d545446a5fde77-RequestReducedScript.js" type="text/javascript"></script>        
+                        <noscript>&lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+        &lt;img src="http://msstonojssocial.112.2O7.net/b/ss/msstonojssocial/1/H.20.2--NS/0" height="1" width="1" alt="" /&gt;
+        &lt;/a&gt;</noscript>
+    
+
+
+</body></html>

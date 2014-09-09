@@ -1,0 +1,124 @@
+﻿<Window x:Class="NAO_Camera_WPF._320window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NAO Camera 320x240" Height="570" Width="576" Closing="Window_Closing"
+ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+  <Grid x:Name="grid" Margin="1,-1,-1,1">
+    <Image x:Name="primaryImage" HorizontalAlignment="Left" Height="240"
+Margin="10,38,0,0" VerticalAlignment="Top" Width="320" Source="blank.png"/>
+    <Slider x:Name="yawSlider" HorizontalAlignment="Left" Margin="10,283,0,0"
+VerticalAlignment="Top" RenderTransformOrigin="0.167,-0.389" Width="320" Maximum="2"
+Minimum="-2" SmallChange="0.01" ValueChanged="yawSlider_ValueChanged" LargeChange="0.1"
+IsDirectionReversed="True"/>
+    <TextBox x:Name="ipBox" HorizontalAlignment="Left" Height="19" Margin="55,16,0,0"
+TextWrapping="Wrap" VerticalAlignment="Top" Width="113" IsEnabled="False"/>
+    <Label x:Name="ipLabel" Content="NAO IP:" HorizontalAlignment="Left"
+Margin="5,12,0,0" VerticalAlignment="Top"/>
+    <Slider x:Name="pitchSlider" HorizontalAlignment="Left" Margin="335,38,0,0"
+VerticalAlignment="Top" Orientation="Vertical" Maximum="0.51" Minimum="-0.67"
+LargeChange="0.1" SmallChange="0.01" Height="240" ValueChanged="pitchSlider_ValueChanged"
+IsDirectionReversed="True"/>
+    <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left"
+Margin="384,38,0,0" VerticalAlignment="Top" Width="75" Click="startButton_Click"/>
+    <Button x:Name="stopButton" Content="Stop" HorizontalAlignment="Left"
+Margin="464,38,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"
+Click="stopButton_Click"/>
+    <Label x:Name="audioLabel" Content="Audio Recording" HorizontalAlignment="Left"
+Margin="380,12,0,0" VerticalAlignment="Top"/>
+    <TextBlock x:Name="timeBlock" HorizontalAlignment="Left" Height="22"
+Margin="384,62,0,0" TextWrapping="Wrap" Text="Recording Time: " VerticalAlignment="Top"
+Width="165"/>
+    <Label x:Name="ttsLabel" Content="Text to Speech" HorizontalAlignment="Left"
+Margin="379,91,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="ttsBox" HorizontalAlignment="Left" Height="92"
+Margin="385,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+    <Button x:Name="sayButton" Content="Say" HorizontalAlignment="Left"
+Margin="475,214,0,0" VerticalAlignment="Top" Width="75" Click="sayButton_Click"/>
+    <Label x:Name="lHandLabel" Content="Left Hand" HorizontalAlignment="Left"
+Margin="383,246,0,0" VerticalAlignment="Top"/>
+    <Button x:Name="lHandOpenButton" Content="Open" HorizontalAlignment="Left"
+Margin="388,272,0,0" VerticalAlignment="Top" Width="75" Click="lHandOpenButton_Click"/>
+    <Button x:Name="lHandCloseButton" Content="Close" HorizontalAlignment="Left"
+Margin="388,297,0,0" VerticalAlignment="Top" Width="75" Click="lHandCloseButton_Click"/>
+    <Label x:Name="rHandLabel" Content="Right Hand" HorizontalAlignment="Left"
+Margin="466,246,0,0" VerticalAlignment="Top"/>
+    <Button x:Name="rHandOpenButton" Content="Open" HorizontalAlignment="Left"
+Margin="471,272,0,0" VerticalAlignment="Top" Width="75" Click="rHandOpenButton_Click"/>
+    <Button x:Name="rHandCloseButton" Content="Close" HorizontalAlignment="Left"
+Margin="471,297,0,0" VerticalAlignment="Top" Width="75" Click="rHandCloseButton_Click"/>
+    <Slider x:Name="lspSlider" HorizontalAlignment="Left" Margin="415,343,0,0"
+VerticalAlignment="Top" Orientation="Vertical" Height="100" Maximum="2" Minimum="-2"
+LargeChange="0.1" SmallChange="0.01" ValueChanged="lspSlider_ValueChanged"
+IsDirectionReversed="True" Value="2"/>
+    <Slider x:Name="lsrSlider" HorizontalAlignment="Left" Margin="18,341,0,0"
+VerticalAlignment="Top" Width="104" LargeChange="0.1" SmallChange="0.01" Minimum="-0.3"
+Maximum="1.3" ValueChanged="lsrSlider_ValueChanged"/>
+    <Label Content="Left Shoulder Roll" HorizontalAlignment="Left"
+Margin="18,319,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.263,0.962"/>
+    <Slider x:Name="leySlider" HorizontalAlignment="Left" Margin="159,344,0,0"
+VerticalAlignment="Top" Width="104" ValueChanged="leySlider_ValueChanged"
+LargeChange="0.1" SmallChange="0.01" Maximum="2" Minimum="-2" Value="-0.85"/>
+    <Label Content="Left Elbow Yaw" HorizontalAlignment="Left" Margin="159,318,0,0"
+VerticalAlignment="Top"/>
+    <Label Content="Left Shoulder Pitch" HorizontalAlignment="Left"
+Margin="347,379,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+      <Label.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-90"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Label.RenderTransform>
+    </Label>
+    <Slider x:Name="rsrSlider" HorizontalAlignment="Left" Margin="18,393,0,0"
+VerticalAlignment="Top" Width="104" Minimum="-0.3" Maximum="1.3" LargeChange="0.1"
+SmallChange="0.01" ValueChanged="rsrSlider_ValueChanged"/>
+    <Label x:Name="rsrLabel" Content="Right Shoulder Roll" HorizontalAlignment="Left"
+Margin="18,367,0,0" VerticalAlignment="Top"/>
+    <Slider x:Name="rspSlider" HorizontalAlignment="Left" Margin="494,342,0,0"
+VerticalAlignment="Top" Width="19" Orientation="Vertical" Height="100" Maximum="2"
+Minimum="-2" LargeChange="0.1" SmallChange="0.01" IsDirectionReversed="True" Value="2"
+ValueChanged="rspSlider_ValueChanged"/>
+    <Label Content="Right Shoulder Pitch" HorizontalAlignment="Left"
+Margin="423,375,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+      <Label.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-90"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Label.RenderTransform>
+    </Label>
+    <Slider x:Name="reySlider" HorizontalAlignment="Left" Margin="159,388,0,0"
+VerticalAlignment="Top" Width="104" Maximum="2" Minimum="-2" Value="-0.85"
+SmallChange="0.01" LargeChange="0.1" ValueChanged="reySlider_ValueChanged"/>
+    <Label Content="Right Elbow Yaw" HorizontalAlignment="Left" Margin="159,366,0,0"
+VerticalAlignment="Top"/>
+    <Slider x:Name="lerSlider" HorizontalAlignment="Left" Margin="18,461,0,0"
+VerticalAlignment="Top" Width="104" Maximum="-0.0349" Minimum="-1.5" LargeChange="0.1"
+SmallChange="0.01" Value="-1.5" ValueChanged="lerSlider_ValueChanged"/>
+    <Slider x:Name="rerSlider" HorizontalAlignment="Left" Margin="18,505,0,0"
+VerticalAlignment="Top" RenderTransformOrigin="1.333,-0.667" Width="104" Minimum="-1.5"
+Maximum="-0.0349" LargeChange="0.1" SmallChange="0.01" Value="-1.5"
+ValueChanged="rerSlider_ValueChanged"/>
+    <Label Content="Left Elbow Roll" HorizontalAlignment="Left" Margin="18,435,0,0"
+VerticalAlignment="Top"/>
+    <Label Content="Right Elbow Roll" HorizontalAlignment="Left" Margin="18,484,0,0"
+VerticalAlignment="Top"/>
+    <Slider x:Name="lwySlider" HorizontalAlignment="Left" Margin="159,461,0,0"
+VerticalAlignment="Top" Width="98" Maximum="1.8" Minimum="-1.8" LargeChange="0.1"
+SmallChange="0.01" ValueChanged="lwySlider_ValueChanged"/>
+    <Slider x:Name="rwySlider" HorizontalAlignment="Left" Margin="159,505,0,0"
+VerticalAlignment="Top" Width="98" Maximum="1.8" Minimum="-1.8" LargeChange="0.1"
+SmallChange="0.01" ValueChanged="rwySlider_ValueChanged"/>
+    <Label Content="Left Wrist Yaw" HorizontalAlignment="Left" Margin="159,435,0,0"
+VerticalAlignment="Top" RenderTransformOrigin="0.5,0"/>
+    <Label Content="Right Wrist Yaw" HorizontalAlignment="Left" Margin="159,484,0,0"
+VerticalAlignment="Top" Width="104"/>
+    <Button x:Name="saveHdButton" Content="Save HD Image" HorizontalAlignment="Left"
+Margin="230,15,0,0" VerticalAlignment="Top" Width="100" Click="saveHdButton_Click"/>
+
+  </Grid>
+</Window>

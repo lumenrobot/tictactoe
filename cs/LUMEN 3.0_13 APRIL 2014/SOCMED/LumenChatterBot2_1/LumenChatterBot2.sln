@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LumenChatterBot2", "LumenChatterBot2\LumenChatterBot2.csproj", "{F3C069EB-732B-42AA-9FD3-561C661F2286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailHandlingOpenPop", "EmailHandlingOpenPop\EmailHandlingOpenPop.csproj", "{A531095C-0F49-4BB7-BD9B-6F3E2991FF6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSendMail", "TestSendMail\TestSendMail.csproj", "{5CF07C04-AFAF-404C-A593-AC09BD65AA2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainApplication", "MainApplication\MainApplication.csproj", "{5D8FBB2C-F42E-4F03-AD59-F1B02A7BA8AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3C069EB-732B-42AA-9FD3-561C661F2286}.Debug|x86.ActiveCfg = Debug|x86
+		{F3C069EB-732B-42AA-9FD3-561C661F2286}.Debug|x86.Build.0 = Debug|x86
+		{F3C069EB-732B-42AA-9FD3-561C661F2286}.Release|x86.ActiveCfg = Release|x86
+		{F3C069EB-732B-42AA-9FD3-561C661F2286}.Release|x86.Build.0 = Release|x86
+		{A531095C-0F49-4BB7-BD9B-6F3E2991FF6E}.Debug|x86.ActiveCfg = Debug|x86
+		{A531095C-0F49-4BB7-BD9B-6F3E2991FF6E}.Debug|x86.Build.0 = Debug|x86
+		{A531095C-0F49-4BB7-BD9B-6F3E2991FF6E}.Release|x86.ActiveCfg = Release|x86
+		{A531095C-0F49-4BB7-BD9B-6F3E2991FF6E}.Release|x86.Build.0 = Release|x86
+		{5CF07C04-AFAF-404C-A593-AC09BD65AA2A}.Debug|x86.ActiveCfg = Debug|x86
+		{5CF07C04-AFAF-404C-A593-AC09BD65AA2A}.Debug|x86.Build.0 = Debug|x86
+		{5CF07C04-AFAF-404C-A593-AC09BD65AA2A}.Release|x86.ActiveCfg = Release|x86
+		{5CF07C04-AFAF-404C-A593-AC09BD65AA2A}.Release|x86.Build.0 = Release|x86
+		{5D8FBB2C-F42E-4F03-AD59-F1B02A7BA8AF}.Debug|x86.ActiveCfg = Debug|x86
+		{5D8FBB2C-F42E-4F03-AD59-F1B02A7BA8AF}.Debug|x86.Build.0 = Debug|x86
+		{5D8FBB2C-F42E-4F03-AD59-F1B02A7BA8AF}.Release|x86.ActiveCfg = Release|x86
+		{5D8FBB2C-F42E-4F03-AD59-F1B02A7BA8AF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

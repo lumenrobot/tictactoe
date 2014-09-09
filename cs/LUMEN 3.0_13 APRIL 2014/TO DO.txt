@@ -1,0 +1,6 @@
+13 April 2014
+1.Separate LanguageProcessing DB from LumenChatterBot DB
+2.LumenChatterBot is part of LumenSocmedSystem
+3.Add database table to save email/comment in LumenChatterBot
+4.Add database for Indonesian Language
+5.Add database for  schedulling posting

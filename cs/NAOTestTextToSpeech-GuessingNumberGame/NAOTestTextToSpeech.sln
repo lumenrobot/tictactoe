@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAOTestTextToSpeech", "NAOTestTextToSpeech\NAOTestTextToSpeech.csproj", "{7EBFA3EE-D4F3-4AC7-80AB-F5C3938AF9C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBFA3EE-D4F3-4AC7-80AB-F5C3938AF9C0}.Debug|x86.ActiveCfg = Debug|x86
+		{7EBFA3EE-D4F3-4AC7-80AB-F5C3938AF9C0}.Debug|x86.Build.0 = Debug|x86
+		{7EBFA3EE-D4F3-4AC7-80AB-F5C3938AF9C0}.Release|x86.ActiveCfg = Release|x86
+		{7EBFA3EE-D4F3-4AC7-80AB-F5C3938AF9C0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

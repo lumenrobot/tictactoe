@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+<head> 
+  <meta content="en-us" http-equiv="Content-Language" /> 
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+  
+  <title>NAO Remote Control</title> 
+  
+  <meta content="Allows remote control of the NAO robot via a webpage." name="description" /> 
+     
+  <script type="text/javascript" src="jquery.js"></script> 
+  <script type="text/javascript">
+      var ws;
+
+      function connectSocketServer() {
+          var support = "MozWebSocket" in window ? 'MozWebSocket' : ("WebSocket" in window ? 'WebSocket' : null);
+
+          if (support == null) {
+              alert("Error: Your browser does not support WebSockets");
+              return;
+          }
+
+          // create a new websocket and connect 
+          ws = new window[support]('ws://localhost:2012/');
+
+          // when data is comming from the server, this metod is called 
+          ws.onmessage = function (evt) {
+              $("#image").attr('src', 'data:image/jpg;base64,' + evt.data);
+          };
+
+          // when the connection is established, this method is called 
+          ws.onopen = function () {
+              ws.send("start");
+              $('#connectButton').attr("disabled", "disabled");
+              $('#disconnectButton').attr("disabled", "");
+          };
+
+          // when the connection is closed, this method is called 
+          ws.onclose = function () {
+              $('#connectButton').attr("disabled", "");
+              $('#disconnectButton').attr("disabled", "disabled");
+          }
+      }
+
+      function sendLeft() {
+          if (ws) {
+              ws.send("left");
+          }
+      }
+
+      function sendRight() {
+          if (ws) {
+              ws.send("right");
+          }
+      }
+
+      function sendUp() {
+          if (ws) {
+              ws.send("up");
+          }
+      }
+
+      function sendDown() {
+          if (ws) {
+              ws.send("down");
+          }
+      }
+
+      function disconnectWebSocket() {
+          if (ws) {
+              ws.close();
+          }
+      }
+
+      function connectWebSocket() {
+          connectSocketServer();
+      }
+
+      window.onload = function () {
+          $('#disconnectButton').attr("disabled", "disabled");
+      } 
+     
+    </script> 
+</head> 
+ 
+ 
+<body> 
+ 
+<p>NAO robot remote control</p> 
+ 
+<input type="button" id="connectButton" value="Connect" onclick="connectWebSocket()"/> <input 
+type="button" id="disconnectButton" value="Disconnect" onclick="disconnectWebSocket()"/> <br /> 
+<img id="image" src="" width="640" height="480"/> 
+ 
+<p>Use these controls to move the robot's head.</p> 
+ 
+<p><INPUT type="button" value="left" onClick="sendLeft()"> 
+<INPUT type="button" value="right" onClick="sendRight()"> 
+<INPUT type="button" value="up" onClick="sendUp()"> 
+<INPUT type="button" value="down" onClick="sendDown()"></p> 
+ 
+</body> 
+ 
+</html>

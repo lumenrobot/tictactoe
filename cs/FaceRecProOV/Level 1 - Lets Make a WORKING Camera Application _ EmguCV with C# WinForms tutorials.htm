@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/base.css" rel="stylesheet">
+      <link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/blackboard.css" rel="stylesheet">
+      <link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/prettyPhoto.css" rel="stylesheet">
+      <link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/superfish.css" rel="stylesheet">
+    <title>Level 1 - Lets Make a WORKING Camera Application | EmguCV with C# WinForms tutorials </title><meta name="keywords" content="emgu cv, c# , webcam image,face detection, face extraction, CvInvoke error Solution, face recognition, PCA, Viola, jones, code, video, tutorials, eigenface, eigenvector"><meta name="description" content="TO DO: MAKE A SIMPLE working CAMERA APPLICATIONI hope you've got the level 0 done nice and smoothly? if so, then lets move on to our next step: lets make a brand new windows application using Emgu ...">
+
+<link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/layouts.css" rel="stylesheet" media="all" type="text/css">
+<link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/style.css" rel="stylesheet" media="all" type="text/css">
+<link href="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/colors_fonts.css" rel="stylesheet" media="all" type="text/css">
+<script src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/jquery_002.js" type="text/javascript"></script><script src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/jquery.js" type="text/javascript"></script><script type="text/javascript" src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/asterion.js"></script><link href="http://fewtutorials.bravesites.com/files/favicon.ico" rel="shortcut icon"><link href="http://fewtutorials.bravesites.com/entries/emgucv-c-camera-applications.atom" title="All EmguCV C# Camera Applications posts" rel="alternate" type="application/atom+xml"><link href="http://fewtutorials.bravesites.com/entries.atom" title="All posts" rel="alternate" type="application/atom+xml"><link href="http://fewtutorials.bravesites.com/entries/emgucv-c-camera-applications/level-1---lets-make-a-camera-application.atom" title="Comments on this post" rel="alternate" type="application/atom+xml"></head>
+
+<body class="two_left dynamic_page_blog_2988_477 dynamic_page_blog_2988 dynamic_page_blog"><div id="ad_container"><div><script type="text/javascript" charset="utf-8">
+  var redvase_ad = { version: 1.5 };
+  redvase_ad.publisher = 'viviti';
+  redvase_ad.kind      = 'leaderboard';
+  redvase_ad.content   = 'creative'
+</script>
+<script type="text/javascript" src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/redvase.js" charset="utf-8"></script><script src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/leaderboard.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+if (document.images) new Image(1,1).src = "http://redvase.bravenet.com/track/impression/27873/906/1392183858";
+else document.writeln('<img width=0 height=0 border=0 src="http://redvase.bravenet.com/track/impression/27873/906/1392183858"/>');
+})();
+</script>
+<noscript><img width=0 height=0 border=0 src="http://redvase.bravenet.com/track/impression/27873/906/1392183858"/></noscript>
+<a target="_blank" href="http://redvase.bravenet.com/track/click/30057/906/1392183858"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/30057.png" border="0"></a><script type="text/javascript">var _qacct="p-f1CbOAXj-Vx6U";</script>
+<script type="text/javascript" src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/quant.js"></script>
+<script type="text/javascript" charset="utf-8">
+(function() {
+if (document.images) new Image(1,1).src = "http://tags.bluekai.com/site/3567?phint=category=902&phint=pid=567";
+else document.writeln('<img width=0 height=0 border=0 src="http://tags.bluekai.com/site/3567?phint=category=902&phint=pid=567" />');
+})();
+</script>
+<!-- RadiumOne code begin -->
+<script type="text/javascript">
+<!--
+document.write('<img src="http://rs.gwallet.com/r1/pixel/x1931r'+Math.round(Math.random()*10000000)+'" width="1" height="1" border="0" alt=""/>');
+//-->
+</script><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/x1931r6563561.htm" alt="" height="1" border="0" width="1">
+<noscript>
+<img src="http://rs.gwallet.com/r1/pixel/x1931" width="1" height="1" border="0" alt=""/>
+</noscript>
+<!-- RadiumOne code end -->
+
+</div></div>
+
+<div id="nav_wrapper"><div id="primary_navigation"><ul><li class="first even item_0"><a href="http://fewtutorials.bravesites.com/" class="navigation_page_link"><span>Home</span></a></li><li class="odd item_1"><a href="http://fewtutorials.bravesites.com/tutorials" class="navigation_page_link"><span>Tutorials</span></a></li><li class="even item_2"><a href="http://fewtutorials.bravesites.com/FAQ" class="navigation_page_link"><span>FAQs</span></a></li><li class="odd item_3"><a href="http://fewtutorials.bravesites.com/contact-me" class="navigation_page_link"><span>Contact Me</span></a></li><li class="even item_4"><a href="http://fewtutorials.forumphp3.com/viewtopic.php?f=11&amp;t=21" class="navigation_external_link" target="_blank"><span>My Final Year Project</span></a></li><li class="last odd item_5"><a href="http://fewtutorials.bravesites.com/Resources" class="navigation_page_link"><span>Useful Links</span></a></li></ul></div></div>
+<div id="body_wrapper">
+<div id="wrapper">
+	<div id="header_wrapper">
+    	<div class="wrapper">
+            <div id="header_text">
+            	<h1 id="site_heading"></h1>
+                <h2 id="site_subheading"></h2>
+            </div>
+            
+            <div id="header_photo">
+            	<img class="header_photo theme_image" src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/0.png" data-original="/assets/images/header-photo.jpg" alt="header photo">
+            </div>
+        </div>
+    </div>
+    
+    <div id="content_wrapper">
+    
+    <div id="middle_wrapper">
+    	<div class="wrapper">  
+            <div id="main">
+        		<div class="location" id="location_0"><div class="asterion_components_container asterion_site_wide_components asterion_components_container_0"></div><div class="asterion_components_container asterion_path_specific_components asterion_components_container_1"></div><div class="asterion_components_container asterion_dynamic_components asterion_components_container_2"><div class="component blog_component first even last item_0" id="show_blog_post"><h2></h2><div class="component_content"><div class="blog_post blog_post_477" id="post-477"><h3 class="title"><a href="http://fewtutorials.bravesites.com/entries/emgucv-c-camera-applications/level-1---lets-make-a-camera-application">Level 1 - Lets Make a WORKING Camera Application</a></h3><div class="post_wrapper"><div title="1308563640000" class="date"><span class="date_prefix">Posted </span>June 20, 2011</div><div class="content"><p><span style="font-size: large;"><strong><span style="color: #333300;"><span style="text-decoration: underline;">TO DO: MAKE A SIMPLE </span></span></strong></span><span style="text-decoration: underline;"><span style="font-size: large;"><strong><span style="color: #333300;"><span style="color: #008000;">working </span></span></strong></span></span><span style="font-size: large;"><strong><span style="color: #333300;"><span style="text-decoration: underline;">CAMERA APPLICATION</span><br></span></strong></span>I
+ hope you've got the level 0 done nice and smoothly? if so, then lets 
+move on to our next step: lets make a brand new windows application 
+using Emgu CV library. we'll be making a camera application based on 
+EmguCV's own example. <em><br><span style="text-decoration: underline;">we'll make it such that it only does our piece of work:</span></em><br><em>
+1. take image from a web camera continuously</em><br><em>
+2. show it in an EmguCV Imagebox</em><br><em>
+3. application should start when "Start" button is pressed. and pause when it is again pressed and vice versa.</em></p>
+<p><span style="text-decoration: underline;"><span style="font-size: large;"><strong><span style="color: #333300;">LEARNING OBJECTIVE:</span></strong></span></span><br><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/level-1.htm"><a href="http://www.mediafire.com/?zoh0z3k1vydpw59" target="_blank"><strong><span style="font-size: large;"> </span></strong></a><span style="color: #ff0000;"><br></span><span style="text-decoration: underline;"><span style="font-size: large;"><strong><span style="color: #333300;">FINAL OUTPUT:</span></strong></span></span><br><a href="http://s1140.photobucket.com/albums/n563/mahvish87/?action=view&amp;current=end.png" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/end.png" alt="Photobucket" style="border: 4px solid #49ed49;" height="462" width="627"></a><br><span style="color: #ff0000;"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/600px-.png" style="margin: 0px 10px 10px 0px; float: left;" height="53" width="56"><br>
+IMPORTANT :</span> make sure you have a working webcam installed AND connected to your computer before beginning this tutorial</p>
+<hr>
+<p><span style="color: #ff0000;"><span style="text-decoration: underline;"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/question.gif" style="float: left; margin: 0px 10px 10px 0px;" height="193" width="90"></span><span style="color: #3366ff;"><strong>&nbsp;</strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><span style="text-decoration: underline;">Question:</span> <em>"Why should I follow <span style="text-decoration: underline;">your</span> tutorial when there are loads of other such tutorials on </em></strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><em>web camera and </em></strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><em>EmguCV!?</em></strong><em>"</em></span></span></p>
+<p><span style="color: #008000;"><strong><span style="text-decoration: underline;">Answer:</span></strong><span style="text-decoration: underline;"> </span>True,</span><span style="color: #800000;"><strong> </strong></span><span style="color: #008000;">you'll
+ find A LOT of camera applications on the internet using Emgu CV, but 
+ours is explained in simple, understandable visual steps, and will let 
+you learn few important things:<br>1- <span style="text-decoration: underline;">how to create a<em><strong> fully functional</strong></em> Emgu Cv based C# project in visual Studio <strong>starting from the very basics!</strong></span></span><br><br><span style="color: #008000;">2- Modify/re-use EmguCv's own Example (that comes with the setup) to create our own application</span><strong><em><span style="color: #99cc00;">.<br><span style="color: #008000;"><br>3-<span style="text-decoration: underline;">learn to SOLVE the 'CvInvoke' error</span></span></span><span style="color: #008000;">...YES that very buggy and weird error that so many face!</span></em></strong><span style="color: #ff0000;">&nbsp;</span><br><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------<br></span><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/Important.png" height="114" width="530"><br>==================================================================<span style="text-decoration: underline;"><strong><em> </em></strong></span></p>
+<p><strong><span style="font-size: medium;">STEP-1: open visual Studio 2008 0r 2010(works well in both) and select <span style="text-decoration: underline;">File-&gt; New-&gt;Project</span> as follows:</span></strong></p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/1.png" height="476" width="647"></p>
+<p><span style="font-size: medium;"><strong>STEP-2:</strong></span> in the <strong>Visual C#</strong> Project menu, Select <strong>"Windows Forms Application"</strong> and name the project <strong>"CameraCapture"</strong> as in figure below, and Click <strong>"OK"&nbsp; </strong></p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/2.png" height="479" width="650"></p>
+<p><span style="font-size: medium;"><strong>STEP-3: </strong></span>Lets first <span style="text-decoration: underline;"><strong>add Emgu References</strong></span> to our project.(though you can add them at any time later <strong>BUT you must add references before</strong> debugging.)<br><br>
+For this, just follow the process as explained in <a href="http://fewtutorials.bravesites.com/entries/emgu-cv-c/level-0-begining-with-emgucv#tut0ref">Level-0 tutorial</a>, i.e right-click project's <strong>"References"</strong> in Solution explorer, and select <strong>"Add Reference". </strong>the below fig shows so:<strong><br></strong></p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/3.png" height="481" width="655"></p>
+<p><span style="font-size: medium;"><strong>STEP-4:</strong></span>select the <strong>Browse</strong> tab in the window that pops up, go to EmguCv's <strong>bin</strong> 
+folder as in Level-0 tutorial, and select the following 3 <strong><span style="text-decoration: underline;"><em>.dll</em></span></strong> files(<em>Emgu.CV.dll</em>, <em>Emgu.CV.UI.dll</em> and <em>Emgu.Util.dll</em>) 
+click <strong>OK</strong> to continue.</p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/4.png" height="485" width="661"></p>
+<p><span style="font-size: medium;"><strong>STEP-5:</strong></span> Rename <em><strong>Form1.</strong></em>cs to <em><strong>CameraCapture</strong></em>.cs and change its <em>Text</em> Field to "<em><strong>Camera Output</strong></em>"<br>I
+ like to keep things neat and meaningful so that understanding the 
+project is easy. So bear with me as i ask you to do some housekeeping 
+chores as we proceed along our tutorials :D</p>
+<p>
+&nbsp;
+<img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/5.png" height="480" width="658"></p>
+<p>&nbsp;<span style="font-size: medium;"><strong>STEP-6:</strong></span><strong><a name="tut1tool">Add EmguCv Tools to your Visual Studio</a></strong>, because we will be using those tools, such as ImageBox, in our tutorial.<em><strong><a href="http://www.emgu.com/wiki/index.php/Add_ImageBox_Control" target="_blank"> follow this official guide to add them.</a></strong></em></p>
+<p><span style="font-size: medium;"><strong>STEP-7:</strong></span>the 
+next step is pretty simple, once you've added EmguCv tools to the 
+Toolbox,as in fig below, just re-size the form and follow the 
+instruction in this fig to<em><span style="text-decoration: underline;"><strong> 
+add an EmguCv ImageBox to the form </strong></span></em>we created.</p>
+<p><span style="text-decoration: underline; color: #ff0000;"><strong>Note:</strong></span> You could use the already present PictureBox tool in Visual Studio instead of Emgu's ImageBox, but<br>1. it will be used a bit differently in coding than how its shown in this tutorial.<br>2.
+ the pupose of using ImageBox here is to familiarize you with another 
+aspect of EmguCv: i.e to use its own tools. they have more capabilities 
+somewhat. </p>
+<p>
+&nbsp;
+<img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/6.png" height="481" width="655"></p>
+<p><span style="font-size: medium;"><strong>STEP-8: </strong></span>Add a button to the form and please do some more required "housekeeping" as below:<span style="text-decoration: underline;"><br>ImageBox Properties: </span><br>(Name) :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CamImageBox<br>BorderStyle:&nbsp;&nbsp; Fixedsingle</p>
+<p><span style="text-decoration: underline;">Button properties:</span><br>(Name) :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btnStart<br>
+Text:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start!</p>
+<p>&nbsp;<img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/7.png" height="483" width="658"></p>
+<p><span style="font-size: medium;"><strong>STEP-9: DEBUG &amp; SAVE PROJECT</strong></span><br>okie dokie, so for now our User Interface is ready, all that's left is coding :D but before we code, lets <strong>Debug</strong> our project, it will automatically <strong>Save</strong> the project as well. we need to do that now. so lets see if our form is fit for run. the form should look something like below </p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/8.png" height="479" width="649"></p>
+<p><span style="font-size: medium;"><strong>STEP-10: </strong></span>to begin coding, view code behind CameraCapture.cs as in fig shown below</p>
+<p><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/9.png" height="464" width="648"></p>
+<p><span style="font-size: medium;"><strong>STEP-11: THE CODE <br>--------------------------------------------------------------------------------------------------------------------------------<br></strong><em>&nbsp;</em></span><span style="font-size: medium;"><em><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/240.htm" style="float: left; margin: 0px 10px 10px 0px;" height="96" width="116"></em></span><span style="font-size: medium;"><em><span style="color: #ff0000;">In case you're not using Visual Studio 2010, and my source code doesn't open for you,</span> do not worry, i've uploaded the code as a text file so you can copy-paste&nbsp;</em></span><span style="font-size: medium;"><strong><a href="http://www.mediafire.com/?83b4f374f007s1h" target="_blank">this code</a></strong></span><span style="font-size: medium;"><em> to our CameraCapture.cs</em><em> <br>in the application we've made so far above. what's happening in the code? the details are as follows.<br><br>if
+ unaltered and debugged, the code will only work if you've made the 
+application like I did and more importantly if you kept the Components' 
+Design Names EXACTLY the same as I did. otherwise please modify it 
+according to your component names<br>----------------------------------------------------------------------------------------------------------------------------------</em></span></p>
+<p><span style="font-size: medium;"><em>&nbsp;</em><strong>&nbsp;</strong></span>1.welcome
+ to your code view :) first things first, we had especially added the 
+Emgu CV references, remember? now in order to use them, add the 
+following directives to the existing ones:</p>
+<pre class="highlighted_code highlighted_code_cs blackboard"><span class="uv_Keyword">using</span> Emgu.CV;
+<span class="uv_Keyword">using</span> Emgu.CV.Structure;
+<span class="uv_Keyword">using</span> Emgu.Util;
+</pre>
+<p>2.now inside the class,declare the following global variables just above the&nbsp; <em>public CameraCapture()</em> initializer </p>
+<pre class="highlighted_code highlighted_code_cs blackboard">        <span class="uv_Comment"><span class="uv_Comment">//</span>declaring global variables</span>
+        <span class="uv_Keyword">private</span> Capture capture;        <span class="uv_Comment"><span class="uv_Comment">//</span>takes images from camera as image frames</span>
+        <span class="uv_Keyword">private</span> <span class="uv_Storage">bool</span> captureInProgress; <span class="uv_Comment"><span class="uv_Comment">//</span> checks if capture is executing</span>
+</pre>
+<p>3. add a user defined function&nbsp; to your code and name it&nbsp; <em>Process Frame()</em>
+ as shown below. In this function we'll create an EmguCv type image 
+called ImageFrame. then capture a frame from camera and save it in "<em>ImageFrame</em>"(line 1). And then we'll load this into <em>CamImageBox</em> to show it to the user(line 2)</p>
+<pre class="highlighted_code highlighted_code_cs blackboard">        <span class="uv_Keyword">private</span> <span class="uv_Keyword">void</span> ProcessFrame(<span class="uv_Storage">object</span> sender, EventArgs arg)
+        {
+            Image&lt;Bgr, Byte&gt; ImageFrame = capture.QueryFrame();  <span class="uv_Comment"><span class="uv_Comment">//</span>line 1</span>
+            CamImageBox.Image = ImageFrame;        <span class="uv_Comment"><span class="uv_Comment">//</span>line 2</span>
+        }
+</pre>
+<p><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span><br><em><strong><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/helpful20tips.jpg" style="float: left; margin: 0px 10px 10px 0px;" height="123" width="120"></strong></em><span style="text-decoration: underline; color: #993366;"><strong>To Display an EmguCV image in Windows Form Picture Box,</strong></span> <br>use this code instead of the one above:</p>
+<pre class="highlighted_code highlighted_code_c blackboard">&nbsp;<span class="uv_Comment"><span class="uv_Comment">//</span>Show the image in Windows Form PictureBox called "pictureBox1"</span>
+pictureBox1.Image = ImageFrame.ToBitmap();
+&nbsp;
+</pre>
+<p><em><strong><br><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/helpful20tips.jpg" style="float: left; margin: 0px 10px 10px 0px;" height="123" width="120"></strong></em><span style="text-decoration: underline; color: #993366;"><strong>Asked by <em>Richard</em>: "<em>how to SAVE the captured image into specific directory or folder?" </em></strong></span><br>You can simply save the picture to anywhere like this:<br>Let's
+ say, you wish to Save an EmguCV image (take the above 'ImageFrame' as 
+an example) to your desired location, say, you want to save it at 'E:\
+' and wish to call it 'MyPic'.<br> Decide on the type of image you want it to be, and save it like so:</p>
+<pre class="highlighted_code highlighted_code_c++ blackboard">ImageFrame.Save(@<span class="uv_String"><span class="uv_String">"</span>E:<span class="uv_InvalidIllegal">\M</span>yPic.jpg<span class="uv_String">"</span></span>);
+</pre>
+<p>      <span style="text-decoration: underline;"><strong>NOTE:</strong></span>&nbsp; do NOT forget to give your image an extension! i like to save it as '.jpg' (saves space). you could try '.bmp'.<br>and do NOT forget the @ sign before 
+your path string. it allows back slashes in a string, so helpful when giving a
+ path in string.<br><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span><br><br>4. now its time to add code behind the <span style="text-decoration: underline;"><strong>Start</strong></span> button. Go to<strong> Design View</strong> of <em>CameraCapture.cs</em> and double click the <strong>Start</strong> button you had added. it will take you back to the<strong> code view</strong> with an empty function of button click event as follows:</p>
+<pre class="highlighted_code highlighted_code_cs blackboard"><span class="uv_Keyword">private</span> <span class="uv_Keyword">void</span> btnStart_Click(<span class="uv_Storage">object</span> sender, EventArgs e)
+{}
+</pre>
+<p><span style="text-decoration: underline;">What we want is that when the <em><strong>Start</strong></em>!
+ button is pressed then camera should start working and the image stream
+ should be visible in our ImageBox. if the stream is on, then the start 
+button should display "Pause". and pressing it now should pause the 
+stream and vice versa. right?</span></p>
+<p>for that, we should create a new capture event if one isn't 
+already created, i.e at startup it will create a capture event from 
+which we will get frames from camera.<br>
+In case the capture was already created (i.e once the application had 
+begun) then now it will do either of the following based on value of 
+<strong><em>captureInProgress</em></strong>: <br>
+<span style="text-decoration: underline;"><strong>when captureInProgress = true</strong></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then <strong>Pause</strong> the capture when btnStart is pressed. this is done by the code :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Application.Idle <strong>-</strong>= ProcessFrame;&nbsp;&nbsp;&nbsp;&nbsp; //ProcessFrame() will be called here to <strong>hold</strong> its job<br></em></p>
+<p><span style="text-decoration: underline;"><strong>when captureInProgress = false<br>
+</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then <strong>Start&nbsp;</strong>the capture when btnStart is pressed. this is done by the code : <em><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application.Idle <strong>+</strong>= ProcessFrame;&nbsp;&nbsp; </em><em>//ProcessFrame() will be called here to <strong>resume</strong> its job</em></p>
+<p><em>NOTE: this is why we had declared a bool type variable called </em><strong><em>captureInProgress, </em></strong><em>now do you get its use?</em><strong><em><br></em></strong></p>
+<p>Therefore,into the btnStart_Click() function, add the following code:</p>
+<pre class="highlighted_code highlighted_code_cs blackboard">            #region <span class="uv_Keyword">if</span> capture <span class="uv_Keyword">is</span> not created, create it now
+            <span class="uv_Keyword">if</span> (capture == <span class="uv_Keyword">null</span>)
+            {
+                <span class="uv_Keyword">try</span>
+                {
+                    capture = <span class="uv_Keyword">new</span> Capture();
+                }
+                <span class="uv_Keyword">catch</span> (NullReferenceException excpt)
+                {
+                    MessageBox.Show(excpt.Message);
+                }
+            }
+            #endregion
+
+            <span class="uv_Keyword">if</span> (capture != <span class="uv_Keyword">null</span>)
+            {
+                <span class="uv_Keyword">if</span> (captureInProgress)
+                {  <span class="uv_Comment"><span class="uv_Comment">//</span>if camera is getting frames then stop the capture and set button Text</span>
+                    <span class="uv_Comment"><span class="uv_Comment">//</span> "Start" for resuming capture</span>
+                    btnStart.Text = <span class="uv_String"><span class="uv_String">"</span>Start!<span class="uv_String">"</span></span>; <span class="uv_Comment"><span class="uv_Comment">//</span></span>
+                    Application.Idle -= ProcessFrame;
+                }
+                <span class="uv_Keyword">else</span>
+                {
+                    <span class="uv_Comment"><span class="uv_Comment">//</span>if camera is NOT getting frames then start the capture and set button</span>
+                    <span class="uv_Comment"><span class="uv_Comment">//</span> Text to "Stop" for pausing capture</span>
+                    btnStart.Text = <span class="uv_String"><span class="uv_String">"</span>Stop<span class="uv_String">"</span></span>;
+                    Application.Idle += ProcessFrame;
+                }
+
+                captureInProgress = !captureInProgress;
+            }
+</pre>
+<p>5. Last but not the least,  add the following function to your code. which takes care of closing the application in a safe way.</p>
+<pre class="highlighted_code highlighted_code_cs blackboard"><span class="uv_Keyword">private</span> <span class="uv_Keyword">void</span> ReleaseData()
+        {
+            <span class="uv_Keyword">if</span> (capture != <span class="uv_Keyword">null</span>)
+                capture.Dispose();
+        }
+</pre>
+<p>Now our Camera Capture Windows Form Application is all ready! what are waiting for? go on DEBUG it! :)</p>
+<p><span style="color: #ff0000;">&nbsp;</span><span style="font-size: medium;"><strong>STEP 12- HANDLE ERROR</strong></span><span style="color: #3366ff;"><br></span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="font-size: medium;"><strong> <img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/21.png" style="margin: 0px 10px 10px 0px; float: left;" height="59" width="59"></strong></span></p>
+<p><span style="font-size: medium;"><strong><a name="tut1Error">Emgu.CV.CvIvoke threw an exception!!!??<br></a><br></strong></span>&nbsp;you
+ tried to debug, but you got this BUGGING error? if you're making the 
+application following our tutorial, please ignore this note below and 
+continue reading this post...<span style="color: #3366ff;">&nbsp;</span><span style="color: #cc99ff;"><br>-----------------------------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; color: red; background: none repeat scroll 0% 0% yellow;"><strong><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/75.jpg" style="float: left; margin: 0px 10px 10px 0px;" height="64" width="64"></strong></span><span style="color: #3366ff;"> </span><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; color: red; background: none repeat scroll 0% 0% yellow;"><strong>&nbsp;</strong></span><span style="color: #ff0000;">IMPORTANT NOTE:</span> FOR THOSE WHO HAVE NOT READ THE TUTORIAL FROM START OR ARE NOT MAKING THIS APPLICATION,<a href="http://fewtutorials.bravesites.com/entries/emgu-cv-c/-emgu-cv-invoke-threw-an-exception-solution" target="_blank"> <br>please read the Other post to solve your 'Emgu.CV.Invoke' error.</a> <span style="color: #3366ff;"><br><br>&nbsp;</span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span><br><br><a href="http://s1140.photobucket.com/albums/n563/mahvish87/?action=view&amp;current=CvInvokeError.png" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/CvInvokeError.png" alt="Photobucket" height="473" border="0" width="643"></a></p>
+<p>this error is telling you that your application ju<span style="text-decoration: underline;"><em><strong>&nbsp;</strong></em></span>st CAN'T connect to your Webcam!<span style="color: #3366ff;"><br></span><span style="color: #cc99ff;"><br></span><span style="text-decoration: underline;"><em><strong> </strong></em></span><span style="text-decoration: underline;"><em><strong>DO SOME CHECKS:<br></strong></em></span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="text-decoration: underline;"><em><strong>&nbsp;</strong></em></span><span style="text-decoration: underline;"><em><strong><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/inventory-check-list.jpg" style="float: left; margin: 0px 10px 10px 0px;" height="199" width="134"></strong></em></span>Don't worry, here are some checks for you to do:<strong>&nbsp;</strong><strong>&nbsp;</strong></p>
+<p><strong>1.is the Emgu Cv's own example of Camera Capturing working perfectly?</strong> <br><br>you can find it at following path (if you installed the Emgu CV as we did)<br> <em><span style="text-decoration: underline;">C:\Emgu\emgucv-windows-x86 2.2.1.1150\Emgu.CV.Example\CameraCapture</span></em><br>go
+ there and open CameraCapture.csproj file. it will open the solution for
+ you. debug this solution and see if the application works or not.<br> 
+if its showing you stream from your webcam then congratulations, at 
+least your camera's working and rest assured that our application that 
+we've just made is also perfectly as fit and fine because it is based on
+ this EmguCV example itself.</p>
+<p><strong>2.did you follow every instruction carefully &amp; correctly?</strong> <br><br>if yes, then there should be no errors in the project's <strong>Error List</strong> at the time you build and debug project. right? <br>if there are errors then you just made a mistake somewhere most probably. resolve that issue. </p>
+<p><span style="text-decoration: underline;"><strong>SOLUTION:</strong></span><span style="color: #cc99ff;"><br>------------------------------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="text-decoration: underline;"><strong>&nbsp;</strong></span><span style="text-decoration: underline;"><strong><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/solution.htm" style="float: left; margin: 0px 10px 10px 0px;" height="146" width="146"></strong></span>You
+ might've tried various sites to find the solution to this problem. we 
+did and trust me we couldn't find anything that worked!<br>they just talked about adding managed and unmanged code and dlls and what not.<br>well they weren't wrong! all they missed was the fact that <em><strong>WHICH</strong></em> dlls they were talking about and exactly <em><strong>where</strong></em> n <em><strong>how</strong></em> to put them!<br>so here's what we present:</p>
+<p><span style="text-decoration: underline;"><strong><br></strong></span><span style="text-decoration: underline;"><strong>Step 1: Add the Managed code to the folder where your .exe file is: </strong></span><br>Do
+ you remember adding the Emgu References? those 3 Emgu.CV dll files? 
+that's it! they're the managed code you MUST add to your project. that's
+ why i made you do that in the very first place! See your Debug 
+folder(or Release folder if you have one) the Emgu.Cv dlls will be 
+present like in the Camera Capture's Debug(second image below).</p>
+<p><span style="text-decoration: underline;"><strong>Step 2: Add the Unmanaged code </strong><strong>to the folder where your .exe file is</strong></span>: </p>
+<p>THIS IS THE SOLUTION TO YOUR PROBLEM DEAR FRIENDS!<br>there are some 
+opencv_xxx220.dlls in the bin folder of EmguCV directory.other than 
+managed dlls we talked about, these are also NECESSARY to be present 
+with your .exe file so that application works perfectly! <br><br>see the image below? that's where you can get them. <br><a href="http://s1140.photobucket.com/albums/n563/mahvish87/?action=view&amp;current=CvInvokeSola.png" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/CvInvokeSola.png" alt="Photobucket" height="466" border="0" width="663"></a><br><strong><br>which ones to add to you project? </strong>well for Camera application these 2 as marked above are required: <em>opencv_core220.dll </em>and<em> opencv_highgui220.dll</em>.</p>
+<p>Now paste it in your project's folder where your .exe file will 
+execute, i.e the DEBUG folder, as shown below just paste the dlls you 
+copied</p>
+<p><a href="http://s1140.photobucket.com/albums/n563/mahvish87/?action=view&amp;current=CvInvokeSolb.png" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/CvInvokeSolb.png" alt="Photobucket" style="margin: 0px;" height="471" border="0" width="670"></a></p>
+<p><span style="color: #3366ff;">&nbsp;</span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------<br></span><span style="color: #ff0000;"><span style="text-decoration: underline;"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/question.gif" style="float: left; margin: 0px 10px 10px 0px;" height="235" width="110"></span><span style="color: #3366ff;"><strong><span style="text-decoration: underline;"><br>
+</span></strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><span style="text-decoration: underline;">Question:</span> <em>"</em></strong></span></span><span style="color: #3366ff;"><em><span style="text-decoration: underline;"><strong>Which is the folder where you say my .exe file is</strong></span></em></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><em>&nbsp;</em></strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><em>!?</em></strong><em>"</em></span></span></p>
+<p><span style="color: #008000;"><strong><span style="text-decoration: underline;">Answer:</span></strong><span style="text-decoration: underline;"> </span><em><strong>VERY IMPORTANT question indeed!</strong> well mostly &amp; usually<strong>&nbsp;</strong>  its the DEBUG folder in you project's BIN folder. as we have in our CameraCapture project.</em></span><br><span style="color: #008000;"><em>
+but in the BIN folder,some of you might also have a RELEASE folder along with DEBUG <strong>&nbsp;</strong> folder.</em></span><br><span style="color: #008000;"><em>
+in this case, copy-paste the unmanaged code(the opencv_YYY220.dlls) to your Release folder as well! <br><br><span style="text-decoration: underline;">note:</span> '</em></span><span style="color: #008000;"><em>YYY</em></span><span style="color: #008000;"><em>' in </em></span><span style="color: #008000;"><em> opencv_</em></span><span style="color: #008000;"><em>YYY</em></span><span style="color: #008000;"><em>220.dlls
+ refers to any respectively required dlls. it is not a name of any 
+particular dll file, so don't worry if you dont find it :)</em></span><span style="color: #008000;"><em>&nbsp;</em></span></p>
+<p><span style="color: #3366ff;"> </span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span><span style="text-decoration: underline;"><strong><em><br>Step-3: </em></strong></span>Now
+ once again open your solution file, and Debug your project. this time 
+you should be able to see the camera working and showing a video stream 
+in the form! </p>
+<p><a href="http://s1140.photobucket.com/albums/n563/mahvish87/?action=view&amp;current=end.png" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/end.png" alt="Photobucket" height="462" border="0" width="627"></a>&nbsp;</p>
+<p>if so then,<br>CASE SOLVED!!!<br>CONGRATULATIONS!!! ^_^</p>
+<p><span style="color: #3366ff;">&nbsp;</span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------<br></span><span style="color: #ff0000;"><span style="text-decoration: underline;"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/question.gif" style="float: left; margin: 0px 10px 10px 0px;" height="235" width="110"></span><span style="color: #3366ff;"><strong><span style="text-decoration: underline;"><br>
+</span></strong></span></span><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><span style="text-decoration: underline;">Question:</span> <em>"</em></strong><em>&nbsp;</em></span></span><strong><span style="color: #3366ff;"><em>WHY DIDN'T WE ADD THE UNMANGED DLLS BEFORE DEBUGGING EARLIER?</em><em>&nbsp;</em></span></strong><span style="color: #ff0000;"><span style="color: #3366ff;"><strong><em>?</em></strong><em>"</em></span></span></p>
+<p><span style="color: #008000;"><strong><span style="text-decoration: underline;">Answer:</span></strong></span><em><span style="text-decoration: underline;"> </span><span style="color: #008000;">In case you're wondering then, that's right! we should have!</span></em><br><strong><em><span style="color: #3366ff;">Then we wouldn't have this error, right?</span></em></strong><br><em><span style="color: #008000;">RIGHT! </span></em><br><strong><em><span style="color: #3366ff;">Then why?</span></em></strong><br><em><span style="color: #008000;">well, obviously it was NOT to annoy you :)<br>
+ if i had asked you to do so earlier, you would've completely missed noticing the 
+importance of adding the unmanaged dlls and would have later suffered 
+from its sticky consequence: the CvInvoke error! which has 
+little help available over the internet.</span></em><br><em><span style="color: #008000;">At least now you'll be careful next time and those who were stuck here maybe found a solution to their problem :)</span></em><span style="color: #008000;"><em>&nbsp;</em></span><span style="color: #008000;"><em>&nbsp;</em></span></p>
+<p><span style="color: #3366ff;"> </span><span style="color: #cc99ff;">------------------------------------------------------------------------------------------------------------------------------------------</span><span style="text-decoration: underline;"><strong><em><br></em></strong></span></p>
+<p><span style="text-decoration: underline;"><strong>STILL HAVING TROUBLE?</strong></span></p>
+<p><span style="text-decoration: underline;"><strong>&nbsp;</strong></span>if
+ you're still having some trouble then... lemme know what it is, maybe 
+we can help. though I've mentioned all possible errors along with their 
+solutions. but we can still try right? :)</p>
+<p>
+====================================================================<br><span style="text-decoration: underline;"><strong><em>&nbsp;</em></strong></span><span style="text-decoration: underline; color: #3366ff;"><strong><span style="font-size: large;">SOURCE CODE</span></strong></span><em><span style="color: #3366ff;"><span style="text-decoration: underline;">&nbsp; (VS 2010)</span><strong>&nbsp;</strong><strong> </strong></span><strong>&nbsp;</strong></em>
+</p>
+<p><span style="text-decoration: underline;"><strong><a href="http://fewtutorials.forumphp3.com/viewtopic.php?f=5&amp;t=12" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/DownloadButton.jpg" style="float: left; margin: 0px 10px 10px 0px;" height="51" width="179"></a></strong></span><strong> </strong><strong><span style="text-decoration: underline;"><span style="color: #ff0000;">NOTE: </span></span><span style="color: #800000;"><em>if
+ you're a beginner to EmguCV projects, then i HIGHLY stress you read and 
+follow the whole tutorial to understand and learn this project.</em></span></strong><span style="color: #800000;"><span style="font-size: medium;"><em> </em></span><strong><em>The source code is here only to HELP you!</em></strong></span></p>
+<hr>
+<p><em><span style="font-size: large;"><strong><span style="color: #008000;">IF YOU LIKE THIS TUTORIAL. PLEASE LEAVE A COMMENT BELOW :)</span></strong></span></em><br>
+<br>
+BUT ASK YOUR QUESTIONS <strong>ONLY</strong> AT THE FOLLOWING LINK. <span style="color: #ff0000;">QUESTIONS IN COMMENTS WILL BE IGNORED.</span></p>
+<p><strong><span style="text-decoration: underline;"><em><span style="color: #ff0000;"><a href="http://fewtutorials.forumphp3.com/viewtopic.php?f=5&amp;t=12" target="_blank"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/QAS.png"></a></span></em></span></strong><span style="color: #800000;"><em><strong>&nbsp;</strong></em></span></p>
+<p><a href="http://fewtutorials.forumphp3.com/viewtopic.php?f=5&amp;t=5" target="_blank"><span style="text-decoration: underline;"><em><span style="color: #ff0000;"><strong><br></strong></span></em></span></a>
+ SEE YOU IN THE NEXT TUTORIAL :)</p>
+<div class="mcePaste" id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">
+</div></div><div class="metadata"><div class="comments" id="comment_count"><a href="http://fewtutorials.bravesites.com/entries/emgucv-c-camera-applications/level-1---lets-make-a-camera-application#comments">67 comments</a></div><div class="category">Posted in <a href="http://fewtutorials.bravesites.com/entries/emgucv-c-camera-applications">EmguCV C# Camera Applications</a></div><div class="tags">Tagged as <a href="http://fewtutorials.bravesites.com/tags/entries/camera">camera</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/picture-from-camera-in-c">picture from camera in c#</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/emgu-cv">emgu cv</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/windows-form-application">windows form application</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/emhucv">emhucv</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/cvinvoke">cvinvoke</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/error">error</a>, <a href="http://fewtutorials.bravesites.com/tags/entries/starting">starting</a>, and <a href="http://fewtutorials.bravesites.com/tags/entries/basics">basics</a></div></div></div></div><h2 id="comment_title"><span>Comments</span></h2><div id="comments"><div class="comment first even item_0" id="comment_1380"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1380">1</a></span> <span class="comment_name"><strong>Aldrin Roxas</strong></span> <span class="date">July 18, 2011</span></div><div class="content"><p>Nice
+ tutorials! Very helpful for newbies in CV like me. Can you please 
+create a tutorial for video processing? Thanks anyways! More power guys!
+ :)</p></div></div><div class="comment odd item_1 featured owner" id="comment_1381"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1381">2</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">July 19, 2011</span></div><div class="content"><p>@Aldrin Roxas
+<br>thanks for appreciating :) and could you specify what sort of 
+processing on video? when i find time from my degree project, i might 
+take on the request ^_^</p></div></div><div class="comment even item_2" id="comment_1459"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1459">3</a></span> <span class="comment_name"><strong>Leslie</strong></span> <span class="date">August 30, 2011</span></div><div class="content"><p>Thanks for this tutorial. But when using kinect why is the image in grayscale? Have a nice day!</p></div></div><div class="comment odd item_3" id="comment_1477"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1477">4</a></span> <span class="comment_name"><strong>priya</strong></span> <span class="date">September 18, 2011</span></div><div class="content"><p>very much thanks. this is best for new buddies .</p></div></div><div class="comment even item_4 featured" id="comment_1487"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1487">5</a></span> <span class="comment_name"><strong>Umair</strong></span> <span class="date">October  1, 2011</span></div><div class="content"><p>Thanks for this tutorial it is a really good help for a very common problem.</p></div></div><div class="comment odd item_5" id="comment_1495"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1495">6</a></span> <span class="comment_name"><strong>nithin</strong></span> <span class="date">October 13, 2011</span></div><div class="content"><p>very nice tutorial..! tks lot </p></div></div><div class="comment even item_6" id="comment_1497"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1497">7</a></span> <span class="comment_name"><strong>eyong</strong></span> <span class="date">October 18, 2011</span></div><div class="content"><p>Very good article and tutorial to learn. Thank buddy!</p></div></div><div class="comment odd item_7" id="comment_1502"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1502">8</a></span> <span class="comment_name"><strong>LIshan Fernando</strong></span> <span class="date">October 20, 2011</span></div><div class="content"><p>Hey Thnx Friend... Thnx a lot...
+<br>IT realy help me and Thnx again , Keep It up :)</p></div></div><div class="comment even item_8" id="comment_1530"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1530">9</a></span> <span class="comment_name"><strong>richard</strong></span> <span class="date">November 22, 2011</span></div><div class="content"><p>how to save the captured image into specific directory or folder?</p></div></div><div class="comment odd item_9 featured" id="comment_1533"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1533">10</a></span> <span class="comment_name"><strong>AM</strong></span> <span class="date">November 29, 2011</span></div><div class="content"><p>Thanks a lot. 
+<br>I could not find the solution anywhere. 
+<br>Thanks a lot again.</p></div></div><div class="comment even item_10 featured owner" id="comment_1541"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1541">11</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">December  7, 2011</span></div><div class="content"><p>@Richard
+<br>you can simply save the picture to anywhere like this:</p>
+
+<p>//Save an EmguCV image (e.g call it 'Pic') to your desired location, e.g i want to save it at E:\
+<br>//and want to call it MyPic.    Remember to give your image an extension! i like to save it as ".jpg", you could try ".bmp"</p>
+
+<p>Pic.Save(@"E:\MyPic.jpg");      //*don't forget this @ sign before 
+your string. it allows back slashes in a string, so helpful when giving a
+ path in string
+<br>//-----------------------------</p>
+
+<p>does that help?</p></div></div><div class="comment odd item_11" id="comment_1548"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1548">12</a></span> <span class="comment_name"><strong>Joaquim</strong></span> <span class="date">December 13, 2011</span></div><div class="content"><p>Very nice indeed. 
+<br>I´ve experienced some delay with my life studio camera.
+<br>How can i solve it?
+<br>regards.</p></div></div><div class="comment even item_12" id="comment_1553"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1553">13</a></span> <span class="comment_name"><strong>Elgammal</strong></span> <span class="date">December 20, 2011</span></div><div class="content"><p>Thanks for this very good toturials,
+<br> but can you start in object recognition field</p></div></div><div class="comment odd item_13" id="comment_1559"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1559">14</a></span> <span class="comment_name"><a href="http://www.sightech.com/" rel="nofollow">Art</a></span> <span class="date">December 25, 2011</span></div><div class="content"><p>Good tutorial!  I followed it, but I still got the error!  Since I had OpenCV on my CPU for use with C++,
+<br>I copied the Opencv_core230.dll and Opencv_Highgui230.dll from there
+ - wrong!!! You must copy Opencv_core231.dll and Opencv_Highgui231 from 
+the EmguCV
+<br>supplied files!!!!  It now works.</p>
+
+<p>By the way, When I tried to run the Example in the EmguCV folder, I 
+got compile errors in VS2010 - why?? Error LNK1104: cannot open file 
+'opencv_core230.lib'.  Why v230 when the dll's are v231??</p>
+
+<p>Thanks,
+<br>Art</p></div></div><div class="comment even item_14 featured owner" id="comment_1560"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1560">15</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">December 25, 2011</span></div><div class="content"><p>@Art
+<br>thank you for appreciating the tutorial :)
+<br>oh and indeed the dlls HAVE to be from Emgucv folder not opencv's :D i clearly mentioned that in step 4 didn't I? 
+<br>oh &amp; about the LNK error, what version of emgucv did you install?</p></div></div><div class="comment odd item_15" id="comment_1582"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1582">16</a></span> <span class="comment_name"><strong>eycau</strong></span> <span class="date">January 12, 2012</span></div><div class="content"><p>Bonjour,
+<br>Je suis français et franchement votre tuto est vraiment super !
+<br>Félicitation et merci beaucoup !</p></div></div><div class="comment even item_16 featured owner" id="comment_1584"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1584">17</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">January 12, 2012</span></div><div class="content"><p>Merci pour l'appréciation eycau, et non, je ne sais pas français, j'ai utilisé Google translate</p>
+
+<p>For general public:
+<br>Thank you eycau for the appreciation, and no, i do not know french, i used google translate :D
+</p></div></div><div class="comment odd item_17" id="comment_1596"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1596">18</a></span> <span class="comment_name"><strong>Jožka</strong></span> <span class="date">January 18, 2012</span></div><div class="content"><p>Thank you for your tutorial, it is very skillful ;-).</p></div></div><div class="comment even item_18" id="comment_1604"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1604">19</a></span> <span class="comment_name"><strong>simone</strong></span> <span class="date">January 25, 2012</span></div><div class="content"><p>ciao
+ Mahvish, sto cercando di visualizzare l'immagine catturata dalla mia 
+Logitech c525, seguendo la tua procedura, in Microsoft Visual Studio 
+2008,ma non riesco a visualizzare nulla(neanch la schermata nera). Puoi 
+darmi la tua mail in modo da avere altre info e in caso inviarti il file
+ per capire meglio qual'è il problema....credo di aver seguito tutti i 
+passi alla perfezione, ma non riesco a vedere nulla(quindi non riesco a 
+capire dove sia l'errore).Please....help me!!!! </p>
+
+<p>Ciao e grazie ,Simone</p></div></div><div class="comment odd item_19 featured owner" id="comment_1608"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1608">20</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">January 27, 2012</span></div><div class="content"><p>@simone
+<br>please re-post your problem/question as a reply here in english:
+<br><a href="http://fewtutorials.forumphp3.com/viewtopic.php?f=5&amp;t=12" rel="nofollow">http://fewtutorials.forumphp3.com/viewtopic.php?f=5&amp;t=12</a></p>
+
+<p>see you there! :)</p></div></div><div class="comment even item_20" id="comment_1645"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1645">21</a></span> <span class="comment_name"><a href="http://www.lookitfree.com/" rel="nofollow">Talha</a></span> <span class="date">February 17, 2012</span></div><div class="content"><p>hy mehwish i am facing the problem in cmaera app when i click start it will show nothing and also there is no error</p></div></div><div class="comment odd item_21 featured owner" id="comment_1649"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1649">22</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">February 20, 2012</span></div><div class="content"><p>hi Talha,
+<br>Please post the problem in the forum.see the post above yours? there's the link!</p>
+
+<p></p></div></div><div class="comment even item_22" id="comment_1703"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1703">23</a></span> <span class="comment_name"><strong>Ostorlabi</strong></span> <span class="date">March  2, 2012</span></div><div class="content"><p>Hello Mr Mahvish;</p>
+
+<p>Very good for your tutoriel it is very explicit, I have a question, how could we save full video?
+<br>thank you in advance.</p></div></div><div class="comment odd item_23" id="comment_1714"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1714">24</a></span> <span class="comment_name"><strong>Ostorlabi</strong></span> <span class="date">March 13, 2012</span></div><div class="content"><p>Hello;</p>
+
+<p>How could we connect Camera IP with Emgu CV?</p>
+
+<p>Thank you.</p></div></div><div class="comment even item_24" id="comment_1738"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1738">25</a></span> <span class="comment_name"><strong>Andre</strong></span> <span class="date">March 23, 2012</span></div><div class="content"><p>Very good!! How did you find the link to add Imagebox tool at the Emgu's page?
+<br>I cant find out there!</p>
+
+<p>Thanks.</p></div></div><div class="comment odd item_25" id="comment_1739"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1739">26</a></span> <span class="comment_name"><strong>Srinivas</strong></span> <span class="date">March 24, 2012</span></div><div class="content"><p>How to capture just a single image rather than video ?</p></div></div><div class="comment even item_26" id="comment_1803"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1803">27</a></span> <span class="comment_name"><strong>Muhammad Amin</strong></span> <span class="date">April 12, 2012</span></div><div class="content"><p>Wonderfull tutorial......</p></div></div><div class="comment odd item_27" id="comment_1828"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1828">28</a></span> <span class="comment_name"><a href="http://facebook.com/ashimloves" rel="nofollow">Rik</a></span> <span class="date">April 27, 2012</span></div><div class="content"><p>Nice tutorial...
+<br>Well not nice but great.
+<br>You saved my ***
+<br>Thanks a lot.</p></div></div><div class="comment even item_28" id="comment_1868"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1868">29</a></span> <span class="comment_name"><a href="http://www.fb.com/deocabral" rel="nofollow">Deo M. Cabral</a></span> <span class="date">May 12, 2012</span></div><div class="content"><p>more power!! and more tutorials please =)</p></div></div><div class="comment odd item_29" id="comment_1896"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1896">30</a></span> <span class="comment_name"><strong>chitra</strong></span> <span class="date">May 19, 2012</span></div><div class="content"><p>thnx.....nic tutorial help me lot......</p></div></div><div class="comment even item_30 featured" id="comment_1928"><div class="comment_metadata"><span class="comment_number"><a href="#comment_1928">31</a></span> <span class="comment_name"><strong>rukshan</strong></span> <span class="date">May 23, 2012</span></div><div class="content"><p>thank you very much for your nice and clear tutorials, helps me lot to get start with emgucv. thakz !!! :-)</p></div></div><div class="comment odd item_31" id="comment_2005"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2005">32</a></span> <span class="comment_name"><strong>Diler</strong></span> <span class="date">June  6, 2012</span></div><div class="content"><p>Hi
+<br>I'm Learning now about EmguCv and your declaration is the best but I
+ still get the error "The type initializer for 'Emgu.CV.CvInvoke' threw 
+an exception." at capture = new Capture(); even I download the project 
+but the same error..? help
+<br>I used Win7 64bit and VS2010 ultimate sp1 EmguCV 2.4 64 bit and anouther time I use yours but still get the same error
+<br> I insist to solve the problem and know more about EmguCV even if I came to India</p></div></div><div class="comment even item_32" id="comment_2130"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2130">33</a></span> <span class="comment_name"><strong>syed armaan</strong></span> <span class="date">June 19, 2012</span></div><div class="content"><p>omg .. a real worthy site</p></div></div><div class="comment odd item_33" id="comment_2236"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2236">34</a></span> <span class="comment_name"><strong>KADER</strong></span> <span class="date">June 28, 2012</span></div><div class="content"><p>wow thank you so much can you do tracking tutorial, please</p></div></div><div class="comment even item_34 featured" id="comment_2286"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2286">35</a></span> <span class="comment_name"><a href="http://n/A" rel="nofollow">Alexander</a></span> <span class="date">July  6, 2012</span></div><div class="content"><p>Hi guys! Keep the good stuff up!! :)</p>
+
+<p>I just wanted to share an easy beginner mistake, and the solution. </p>
+
+<p>The exception thrown by CV, can be caused if you installed the x64 
+version of EMGU, and forgot setting the project respectively. </p>
+
+<p>This is done by right clicking the project -&gt; properties (Alt + Enter) -&gt; Build</p>
+
+<p>Change platform target to x64</p>
+
+<p>Again thanks for the step by step tutorial!</p></div></div><div class="comment odd item_35" id="comment_2357"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2357">36</a></span> <span class="comment_name"><strong>Kamran Ahmed</strong></span> <span class="date">July 23, 2012</span></div><div class="content"><p>AOA!
+<br>Marvelloussssss tutorials. Thanks alot :)</p>
+
+<p></p></div></div><div class="comment even item_36" id="comment_2516"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2516">37</a></span> <span class="comment_name"><strong>Arun Yadav</strong></span> <span class="date">August 15, 2012</span></div><div class="content"><p>Awesome support for emgu dev! Thank you very much </p></div></div><div class="comment odd item_37" id="comment_2541"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2541">38</a></span> <span class="comment_name"><strong>deepak karmakar</strong></span> <span class="date">August 20, 2012</span></div><div class="content"><p>during run time it is showing exception opencv_core240.dll not found.how could i solve it.
+<br>exception is shown at image().plz help me..it was running earlier but its not running after formatting my laptop</p></div></div><div class="comment even item_38" id="comment_2565"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2565">39</a></span> <span class="comment_name"><strong>Roly</strong></span> <span class="date">August 22, 2012</span></div><div class="content"><p>Great</p></div></div><div class="comment odd item_39" id="comment_2570"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2570">40</a></span> <span class="comment_name"><a href="http://www.google.com/" rel="nofollow">Guest</a></span> <span class="date">August 24, 2012</span></div><div class="content"><p>Nice
+ Tutorial .. PS : For Beginner , Click on ImageBox When u run the 
+project .. Because Code is in click event not a Load event .. </p>
+
+<p>Thanx Mahvish , Love ur work very much :) </p></div></div><div class="comment even item_40" id="comment_2591"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2591">41</a></span> <span class="comment_name"><strong>amish</strong></span> <span class="date">August 28, 2012</span></div><div class="content"><p>really very thankfull to you 
+<br>gr8 effort :)</p></div></div><div class="comment odd item_41" id="comment_2619"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2619">42</a></span> <span class="comment_name"><a href="http://jsdkjfaklj/" rel="nofollow">hsdbshbdj</a></span> <span class="date">August 31, 2012</span></div><div class="content"><p>Very good tutorial. Thanks a lot. </p></div></div><div class="comment even item_42" id="comment_2674"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2674">43</a></span> <span class="comment_name"><strong>Binjamin</strong></span> <span class="date">September  5, 2012</span></div><div class="content"><p>Hi,
+ the website is really useful. I was able to run your first tutorial 
+fine. I would like to capture a video but I am not sure what commands to
+ use or if I am missing other dll files.
+<br>Thanks</p></div></div><div class="comment odd item_43" id="comment_2698"><div class="comment_metadata"><span class="comment_number"><a href="#comment_2698">44</a></span> <span class="comment_name"><strong>Phạm Văn Đạt</strong></span> <span class="date">September  6, 2012</span></div><div class="content"><p>Erorr when i open camera about 15s
+<br>a problem caused the program to stop working correctly windows will close the program and notify...
+<br>Thanks</p></div></div><div class="comment even item_44" id="comment_3377"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3377">45</a></span> <span class="comment_name"><strong>zofi</strong></span> <span class="date">October  1, 2012</span></div><div class="content"><p>what
+ a nice, fancy and attractive tutorial!there is an ease in 
+learning.hoping for more tutorials like this.plz continue ur precious 
+work and take this series upto advanced level.</p></div></div><div class="comment odd item_45" id="comment_3383"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3383">46</a></span> <span class="comment_name"><strong>zofi</strong></span> <span class="date">October  2, 2012</span></div><div class="content"><p>just
+ one more step to above tutorial. plz prepare installer set up of camera
+ application so that we can install it on hard disk and utilize it.
+<br>thanks</p></div></div><div class="comment even item_46" id="comment_3486"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3486">47</a></span> <span class="comment_name"><strong>Tien Nguyen Thanh</strong></span> <span class="date">October  8, 2012</span></div><div class="content"><p>I cant find any where in project that call ReleaseData, so why do we code it?</p></div></div><div class="comment odd item_47" id="comment_3538"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3538">48</a></span> <span class="comment_name"><a href="http://www.dlsx.co/" rel="nofollow">Priya</a></span> <span class="date">October 11, 2012</span></div><div class="content"><p>Very helpful tutorial.  Keep up the good work guys.</p></div></div><div class="comment even item_48" id="comment_3656"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3656">49</a></span> <span class="comment_name"><strong>JM</strong></span> <span class="date">October 14, 2012</span></div><div class="content"><p>I found that the published version works not if I use debug...
+<br>I am using Win7 VS2010 C# and EMGUCV 2.4.2</p></div></div><div class="comment odd item_49" id="comment_3662"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3662">50</a></span> <span class="comment_name"><strong>JM</strong></span> <span class="date">October 14, 2012</span></div><div class="content"><p>I tried another type of webcam and both the debug and the published versions work.  So... testing is everything!
+<br>BTW I am amazed at the amount of work and care you are putting into these tutorials.  Best ones I have found so far!</p></div></div><div class="comment even item_50" id="comment_3845"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3845">51</a></span> <span class="comment_name"><strong>IBM Philippines</strong></span> <span class="date">October 30, 2012</span></div><div class="content"><p>This tutorial helped me a lot, but I have a question, do you have any discussion about license plate recognition?</p></div></div><div class="comment odd item_51" id="comment_3908"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3908">52</a></span> <span class="comment_name"><strong>Himanshu</strong></span> <span class="date">November 10, 2012</span></div><div class="content"><p>Very well written</p></div></div><div class="comment even item_52" id="comment_3991"><div class="comment_metadata"><span class="comment_number"><a href="#comment_3991">53</a></span> <span class="comment_name"><strong>Miguel</strong></span> <span class="date">November 22, 2012</span></div><div class="content"><p>Hey there!</p>
+
+<p>I'm having a bug that says that:</p>
+
+<p>capture = new Capture(); throws an exception... </p>
+
+<p>i've the EmguCV files for x64 and pasted the .dll files in my bin 
+&gt; debug file, and it still complains about that :( any help with 
+that?</p>
+
+<p>Thanks for your time and your tutorial. You are awesome! :D</p></div></div><div class="comment odd item_53" id="comment_4125"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4125">54</a></span> <span class="comment_name"><strong>Tejas Desai</strong></span> <span class="date">December 12, 2012</span></div><div class="content"><p>Your
+ this tutorial has been very usefull for me thnxx for uploaading such a 
+nice tutorial ,can you provide the tutorial or change in code for 
+capturing the single image and not a video... </p></div></div><div class="comment even item_54" id="comment_4177"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4177">55</a></span> <span class="comment_name"><strong>Rajesh</strong></span> <span class="date">December 20, 2012</span></div><div class="content"><p>Completed level 0 and level 1 tutorials, it is great, I am learning how to use EmguCV in my project.
+</p></div></div><div class="comment odd item_55" id="comment_4201"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4201">56</a></span> <span class="comment_name"><strong>Mohammed </strong></span> <span class="date">December 26, 2012</span></div><div class="content"><p>hi there!</p>
+
+<p>for those who have  'Emgu.CV.Invoke' error , if you are using 64bits 
+OS make sure that you have EmguCV-x64 version and also make sure that 
+you change the project properties form the VS to be  Build - paltform 
+target == X64</p>
+
+<p>hope that help you guys  </p></div></div><div class="comment even item_56" id="comment_4258"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4258">57</a></span> <span class="comment_name"><strong>neehari</strong></span> <span class="date">January  1, 2013</span></div><div class="content"><p>Thank you very much.....!</p></div></div><div class="comment odd item_57 featured" id="comment_4265"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4265">58</a></span> <span class="comment_name"><strong>ChathuKJIH</strong></span> <span class="date">January  2, 2013</span></div><div class="content"><p>Can you please tell me a way to store multiple images in a one folder?
+<br>Instead of -&gt;ImageFrame.Save(@"E:\MyPic.jpg");
+<br>what code segment i should use??</p>
+
+<p>Please help me....
+<br>Thank you</p>
+
+<p></p></div></div><div class="comment even item_58" id="comment_4542"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4542">59</a></span> <span class="comment_name"><a href="http://www.facebook.com/Harryis.Malik" rel="nofollow">Muhammad Haris Ehsan</a></span> <span class="date">January 24, 2013</span></div><div class="content"><p>Thanks Mahvish g it is very helping tutorial. thank you so much</p></div></div><div class="comment odd item_59" id="comment_4863"><div class="comment_metadata"><span class="comment_number"><a href="#comment_4863">60</a></span> <span class="comment_name"><a href="http://tejaswarooparukoti.wordpress.com/" rel="nofollow">Teja Swaroop Arukoti</a></span> <span class="date">January 29, 2013</span></div><div class="content"><p>Very nice tutorials madam. :) Thank you so much!! </p></div></div><div class="comment even item_60" id="comment_5144"><div class="comment_metadata"><span class="comment_number"><a href="#comment_5144">61</a></span> <span class="comment_name"><a href="http://www.etriga.net/" rel="nofollow">suresh</a></span> <span class="date">February 16, 2013</span></div><div class="content"><p>Good tutorial mate.</p></div></div><div class="comment odd item_61" id="comment_5149"><div class="comment_metadata"><span class="comment_number"><a href="#comment_5149">62</a></span> <span class="comment_name"><strong>Adelina</strong></span> <span class="date">February 16, 2013</span></div><div class="content"><p>Hello !</p>
+
+<p>Your tutorials are great ! Easy to follow and very helpful for us, the beginners !</p>
+
+<p>I followed the tutorial and everything went well, except that i get a
+ black screen instead of a video capture .. Do you know why would that 
+be ?</p>
+
+<p>Thank you !</p></div></div><div class="comment even item_62" id="comment_6733"><div class="comment_metadata"><span class="comment_number"><a href="#comment_6733">63</a></span> <span class="comment_name"><strong>Adel Saleh</strong></span> <span class="date">March 12, 2013</span></div><div class="content"><p>Great tutorial!!
+<br>you for get to Add cudart32_50_35.dll in case of using VS2010, otherwise you will get Emgu.CV.Invoke.</p></div></div><div class="comment odd item_63" id="comment_6782"><div class="comment_metadata"><span class="comment_number"><a href="#comment_6782">64</a></span> <span class="comment_name"><strong>Compactiger</strong></span> <span class="date">March 13, 2013</span></div><div class="content"><p>Thank you so much!!! very helpful</p></div></div><div class="comment even item_64" id="comment_7301"><div class="comment_metadata"><span class="comment_number"><a href="#comment_7301">65</a></span> <span class="comment_name"><strong>TheSkyfall</strong></span> <span class="date">March 25, 2013</span></div><div class="content"><p>Thanks for this tutorial. I did follow all the steps, but I got " threw an exception" problem on this line:
+<br>capture = new Capture();</p>
+
+<p>I'm working on Windows 7 64bit.</p>
+
+<p>Any advice?
+<br>Thank you.</p></div></div><div class="comment odd item_65 featured owner" id="comment_7314"><div class="comment_metadata"><span class="comment_number"><a href="#comment_7314">66</a></span> <span class="comment_name"><a href="http://fewtutorials.bravesites.com/" rel="nofollow">Mahvish</a></span> <span class="date">March 25, 2013</span></div><div class="content"><p>@TheSkyfall:
+<br>read this for your solution:
+<br><a href="http://fewtutorials.bravesites.com/entries/installing-emgucv-and-configuring-with-visual-studio/-level-0-emgucv-installation-guide-for-64-bit-windows-users" rel="nofollow">http://fewtutorials.bravesites.com/entries/installing-emgucv-and-configuring-with-visual-studio/-level-0-emgucv-installation-guide-for-64-bit-windows-users</a></p></div></div><div class="comment last even item_66" id="comment_8042"><div class="comment_metadata"><span class="comment_number"><a href="#comment_8042">67</a></span> <span class="comment_name"><strong>Dagmawi</strong></span> <span class="date">April  8, 2013</span></div><div class="content"><p>Thank you a lot !From Ethiopia</p></div></div><div class="paging"><div class="paging_info">Displaying <b>all 67</b> comments</div></div></div><h2 id="comment_form_title"><span>Add comment</span></h2><div id="comment_form_area"><form class="ajax_form" action="/resource/blog/comment/add/477" method="post" id="comment_form"><div><div id="input_fields_wrapper"><div class="input_wrapper"><label for="new_comment_name">Name: </label><input name="new_comment[name]" size="30" id="new_comment_name" type="text"></div><div class="input_wrapper"><label for="new_comment_email">Email: </label><input name="new_comment[email]" size="30" id="new_comment_email" type="text"></div><div class="input_wrapper"><label for="new_comment_url">Website: </label><input name="new_comment[url]" size="30" id="new_comment_url" type="text"></div><div class="input_wrapper" id="asterion_captcha"><label>Enter text only if you are not human:</label><input name="captcha" id="captcha" type="text"><input name="comment_key" id="comment_key" value="7813784062d63c44ad0b8f6318a2962f4f945eb3" type="hidden"></div></div><div class="input_wrapper textarea_wrapper"><label for="new_comment_body">Comment: </label><textarea name="new_comment[body]" id="new_comment_body" rows="20" cols="40"></textarea></div><div class="submit_wrapper"><input name="commit" value="Submit" type="submit"></div></div></form></div></div></div><script type="text/javascript">
+//<![CDATA[
+
+(function($){
+  // Redirect to the previous page if this blog post was deleted
+  $(document).on('blog.delete', function(event, post_id){
+    history.back();
+  });
+})(jQuery);
+
+//]]>
+</script></div><div class="asterion_components_container asterion_path_specific_components asterion_components_container_3"></div><div class="asterion_components_container asterion_site_wide_components asterion_components_container_4"></div></div>
+            </div>
+            <div id="right">
+        		<div class="location" id="location_1"><div class="asterion_components_container asterion_site_wide_components asterion_components_container_0"><div class="component custom_component first even item_0" id="component_20668"><h2><span>Quick Links</span></h2><div class="component_content"><div><p><a href="http://fewtutorials.bravesites.com/#follow">Why Follow These Tutorials?</a></p>
+<p><a href="http://fewtutorials.bravesites.com/#tools">The tools you will need</a></p>
+<p><a href="http://fewtutorials.bravesites.com/#About">About Me</a></p>
+<p><a href="http://fewtutorials.bravesites.com/contact-me">Contact Me</a></p></div></div></div><div class="component custom_component odd item_1" id="component_19283"><h2><span>UPDATES:</span></h2><div class="component_content"><div><p><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/ic-new.gif" alt=""> <span style="color: #0000ff; text-decoration: underline;">27th April, 2013:</span> <br></span></span></strong></span></span></span></strong></span></span></span></strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="color: #333399;"><span style="background-color: #ffff99;"><span style="background-color: #ccffff;"><span style="background-color: #ffffff;">Added Tutorial: </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="background-color: #ffffff;"><strong><a href="http://fewtutorials.bravesites.com/entries/announcements/read-write-image-to-ms-access-database-table-using-csharp-winform"><span style="background-color: #ffffff;">Read/Write Images to MS Access Database Table Using C# Winform</span></a></strong></span></p>
+<p><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;"><span style="text-decoration: underline;"><strong><span style="color: #ff0000; text-decoration: underline;"><span style="color: #339966; text-decoration: underline;">&nbsp;</span></span></strong></span></span></span></strong></span></span></span></strong></span></p></div></div></div><div class="component blog_search_component even item_2" id="component_21583"><h2><span>Search Tutorials</span></h2><div class="component_content"><div class="search_wrapper"><form action="/entries" method="get"><div><div class="input_wrapper"><input name="query" id="blog_search" type="text"></div><div class="submit_wrapper"><input name="commit" value="Search" type="submit"></div></div></form></div></div></div></div><div class="asterion_components_container asterion_path_specific_components asterion_components_container_1"></div><div class="asterion_components_container asterion_site_wide_components asterion_components_container_4"><div class="component page_counter_component odd last item_3" id="component_7476"><h2><span>Total Unique Visitors</span></h2><div class="component_content"><p class="page_counter"><span class="number_1">1</span><span class="number_5">5</span><span class="number_2">2</span><span class="number_0">0</span><span class="number_4">4</span><span class="number_7">7</span></p></div></div></div></div>
+            </div>      
+        </div>
+    </div> 
+    
+    </div>
+    
+    <div id="footer_wrapper">
+    	<div class="wrapper">
+        	<div id="copyright"><p>© fewtutorials</p></div>
+        	  
+        </div>
+    </div>
+       
+</div>
+</div>
+
+
+
+
+  <div id="branding_container" style="background-color: #454545; background-image: -webkit-linear-gradient(top, #454545, #111); background-image: -moz-linear-gradient(top, #454545, #111); background-image: -ms-linear-gradient(top, #454545, #111); background-image: -o-linear-gradient(top, #454545, #111); background-image: linear-gradient(top, #454545, #111); height: 35px; z-index: 950; bottom: 0; left: 0; width: 100%; min-width: 980px; position: fixed; color: #fff; visibility:visible; display:block;">
+  <div id="branding_wrapper" style="margin: 0 auto; width: 980px; line-height: 2.6; font-size: 14px; font-family: 'Trebuchet MS'; position: relative; display: block; visibility: visible;">
+  <span>This Free Website was created with the <a href="http://bravesites.com/">Bravenet Website Builder</a>.
+    &nbsp; &nbsp; Build your own Website for <a href="http://bravesites.com/">Free!</a></span>
+  <div><a href="http://bravesites.com/"><img src="Level%201%20-%20Lets%20Make%20a%20WORKING%20Camera%20Application%20_%20EmguCV%20with%20C%23%20WinForms%20tutorials_files/bravesites_toolbar_logo.png" id="brand_logo"></a></div>
+  </div>
+  </div>
+  <style type="text/css">
+  body {margin-bottom: 35px;}
+  </style>
+
+
+
+
+
+
+</body></html>

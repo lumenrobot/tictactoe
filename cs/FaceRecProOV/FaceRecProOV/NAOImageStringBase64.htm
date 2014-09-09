@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+<head> 
+  <meta content="en-us" http-equiv="Content-Language" /> 
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+  
+  <title>NAO Remote Control</title> 
+  
+  <meta content="Allows remote control of the NAO robot via a webpage." name="description" /> 
+     
+  <script type="text/javascript" src="jquery.js"></script> 
+  <script type="text/javascript">
+      // Return a string.
+      function test() {
+          return ("This is a test.");
+      }
+      var ws;
+      var stringImage = document.getElementById("imagestring").innerHTML;
+
+      function getBase64String() {
+          return stringImage;
+          //return document.getElementById("imagestring").innerHTML;
+      }
+
+      function connectSocketServer(adress) {
+          var support = "MozWebSocket" in window ? 'MozWebSocket' : ("WebSocket" in window ? 'WebSocket' : null);
+
+          if (support == null) {
+              alert("Error: Your browser does not support WebSockets");
+              return;
+          }
+
+          if (adress == null) {
+              adress = 'ws://localhost:2012/'
+          }
+          // create a new websocket and connect 
+          ws = new window[support](adress);
+
+          // when data is comming from the server, this metod is called
+          ws.onmessage = function (evt) {
+              //$("#p").attr('src', 'data:image/jpg;base64,' + evt.data);
+              document.getElementById("imagestring").innerHTML = evt.data;
+              stringImage = evt.data;
+          };
+              
+
+          // when the connection is established, this method is called 
+          ws.onopen = function () {
+              ws.send("start");
+              
+          };
+
+      }
+
+      function disconnectWebSocket() {
+          if (ws) {
+              ws.close();
+          }
+      }
+
+      function connectWebSocket() {
+          connectSocketServer();
+      }
+
+      window.onload = function () {
+          connectSocketServer();
+      } 
+     
+    </script> 
+</head> 
+ 
+ 
+<body> 
+ 
+<div id="imagestring">Image Base64</div> 
+
+ 
+</html>

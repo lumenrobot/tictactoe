@@ -1,0 +1,22 @@
+body {margin: 0; padding: 0; }
+
+ul, ol {padding-left: 25px;}
+a img {border: none;}
+
+h1#site_heading {margin: 0px; padding: 0px;}
+h2#site_subheading {margin: 0; padding: 0px;}
+h3.title {margin-bottom: 0px;}
+
+#header_text {padding: 20px 2px; overflow: hidden;}
+
+
+#primary_navigation {zoom: 1; overflow: hidden;}
+#primary_navigation ul { list-style: none; margin: 0; padding: 0; width: 960px;}
+#primary_navigation ul li {display: inline-block;margin: 0; padding: 0;}
+#primary_navigation ul li a { padding: 7px 10px; }
+
+#main .location, #right .location, #left .location, #top .location { padding : 5px; }
+.metadata {padding: 5px;}
+.metadata div {display: inline;}
+
+.component { padding : 0 15px; }

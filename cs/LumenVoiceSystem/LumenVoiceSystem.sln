@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LumenVoiceSystem", "LumenVoiceSystem\LumenVoiceSystem.csproj", "{9136B995-7A03-4BCE-9CF4-160DDB153058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceRecognition", "VoiceRecognition\VoiceRecognition.csproj", "{CAC5A95F-56B8-45CF-8BE9-ECAA8315E528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceSample", "VoiceSample\VoiceSample.csproj", "{32D78DB5-A446-4093-9032-BE5E6FCF9CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageProcessing", "LanguageProcessing\LanguageProcessing.csproj", "{37690135-0678-4D80-97E0-A661B708E3F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{139AE911-9D76-4C0A-96B9-280F3F667E46}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteModule", "RemoteModule\RemoteModule.csproj", "{2729A79E-775D-4936-966B-F42B3B5A484F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceSampleCustom", "VoiceSampleCustom\VoiceSampleCustom.csproj", "{9CD05C57-970C-4484-A3B6-CC9E6D739ED7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9136B995-7A03-4BCE-9CF4-160DDB153058}.Debug|x86.ActiveCfg = Debug|x86
+		{9136B995-7A03-4BCE-9CF4-160DDB153058}.Debug|x86.Build.0 = Debug|x86
+		{9136B995-7A03-4BCE-9CF4-160DDB153058}.Release|x86.ActiveCfg = Release|x86
+		{9136B995-7A03-4BCE-9CF4-160DDB153058}.Release|x86.Build.0 = Release|x86
+		{CAC5A95F-56B8-45CF-8BE9-ECAA8315E528}.Debug|x86.ActiveCfg = Debug|x86
+		{CAC5A95F-56B8-45CF-8BE9-ECAA8315E528}.Debug|x86.Build.0 = Debug|x86
+		{CAC5A95F-56B8-45CF-8BE9-ECAA8315E528}.Release|x86.ActiveCfg = Release|x86
+		{CAC5A95F-56B8-45CF-8BE9-ECAA8315E528}.Release|x86.Build.0 = Release|x86
+		{32D78DB5-A446-4093-9032-BE5E6FCF9CCB}.Debug|x86.ActiveCfg = Debug|x86
+		{32D78DB5-A446-4093-9032-BE5E6FCF9CCB}.Debug|x86.Build.0 = Debug|x86
+		{32D78DB5-A446-4093-9032-BE5E6FCF9CCB}.Release|x86.ActiveCfg = Release|x86
+		{32D78DB5-A446-4093-9032-BE5E6FCF9CCB}.Release|x86.Build.0 = Release|x86
+		{37690135-0678-4D80-97E0-A661B708E3F3}.Debug|x86.ActiveCfg = Debug|x86
+		{37690135-0678-4D80-97E0-A661B708E3F3}.Debug|x86.Build.0 = Debug|x86
+		{37690135-0678-4D80-97E0-A661B708E3F3}.Release|x86.ActiveCfg = Release|x86
+		{37690135-0678-4D80-97E0-A661B708E3F3}.Release|x86.Build.0 = Release|x86
+		{2729A79E-775D-4936-966B-F42B3B5A484F}.Debug|x86.ActiveCfg = Debug|x86
+		{2729A79E-775D-4936-966B-F42B3B5A484F}.Debug|x86.Build.0 = Debug|x86
+		{2729A79E-775D-4936-966B-F42B3B5A484F}.Release|x86.ActiveCfg = Release|x86
+		{2729A79E-775D-4936-966B-F42B3B5A484F}.Release|x86.Build.0 = Release|x86
+		{9CD05C57-970C-4484-A3B6-CC9E6D739ED7}.Debug|x86.ActiveCfg = Debug|x86
+		{9CD05C57-970C-4484-A3B6-CC9E6D739ED7}.Debug|x86.Build.0 = Debug|x86
+		{9CD05C57-970C-4484-A3B6-CC9E6D739ED7}.Release|x86.ActiveCfg = Release|x86
+		{9CD05C57-970C-4484-A3B6-CC9E6D739ED7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<Window x:Class="NAO_Camera_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Main Menu" Height="240" Width="410" ResizeMode="CanMinimize"
+WindowStartupLocation="CenterScreen">
+  <Grid>
+    <Button x:Name="_640button" Content="640 x 480" HorizontalAlignment="Left"
+Margin="201,119,0,0" VerticalAlignment="Top" Width="183" Height="75"
+Click="_640Button_Click"/>
+    <TextBox x:Name="ipBox" Height="19" Margin="57,69,234,0" TextWrapping="Wrap"
+Text="69.88.163.51" VerticalAlignment="Top"/>
+    <Button x:Name="_320button" Content="320 x 240" HorizontalAlignment="Left"
+Margin="10,119,0,0" VerticalAlignment="Top" Width="183" Height="75"
+Click="_320Button_Click"/>
+    <TextBlock x:Name="ipLabel" HorizontalAlignment="Left" Margin="10,70,0,0"
+TextWrapping="Wrap" Text="NAO IP:" VerticalAlignment="Top"
+RenderTransformOrigin="0.096,0.376"/>
+    <Label Content="Video Resolution" HorizontalAlignment="Left" Height="24"
+Margin="6,96,0,0" VerticalAlignment="Top" Width="183"/>
+    <TextBlock x:Name="instructionBox" HorizontalAlignment="Left" Margin="10,10,0,0"
+TextWrapping="Wrap" Text="Enter the IP Address of your NAO Robot then select a video 
+resolution. Higher resolution gives more detail at the expense of frame rate."
+VerticalAlignment="Top" Height="49" Width="374"/>
+    <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap"
+Text="This software is only compatible with NAO v4" VerticalAlignment="Top"/>
+
+  </Grid>
+</Window>

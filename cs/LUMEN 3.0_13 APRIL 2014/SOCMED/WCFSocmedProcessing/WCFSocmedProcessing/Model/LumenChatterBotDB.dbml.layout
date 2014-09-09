@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.125, 8.5" name="LumenChatterBotDB">
+  <DataContextMoniker Name="/LumenChatterBotDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="10869a35-0b72-4a47-920a-97e186b62357" absoluteBounds="0.5, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/KeyWordTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1a85787-3b40-4f95-b406-26a31f4c4baf" absoluteBounds="0.51499999999999968, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="503c5636-3f47-4eae-9f08-90c364c4b2b7" absoluteBounds="3.375, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/ResponseTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ad8f543-e835-4977-867d-7bd75bae647f" absoluteBounds="3.39, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="300b75dd-6d2d-4a4f-8f04-9ebd798b4599" absoluteBounds="3.375, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/BehaivourTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd9be19e-edf9-4182-9dd2-65cd31b5b205" absoluteBounds="3.39, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52033d92-3d4f-41c4-bae7-97561474f202" absoluteBounds="0.5, 3.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/vw_KeyWordResponse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdd7a411-8b12-459f-a8b8-4a2697f381ad" absoluteBounds="0.51500000000000012, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42799ee9-3850-4832-a56a-edb65e4a038a" absoluteBounds="11.875, 1.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/InboxReply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46220308-7e35-483d-b09b-9ffc9797c630" absoluteBounds="11.89, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8caee1fa-27dd-4209-a38c-8fb07edcee90" absoluteBounds="9.125, 1, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/InboxDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c7df0d3-99d8-4750-a940-f2120d8a2776" absoluteBounds="9.14, 1.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba3eefc7-6f40-4947-8451-bf547dd803e2" absoluteBounds="6.375, 1.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LumenChatterBotDBDataContext/InboxMain" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f851994d-89d7-4726-a0c3-5ad5625b5961" absoluteBounds="6.39, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.125 : 2.39505126953125); (11.875 : 2.39505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LumenChatterBotDBDataContext/InboxDetail/InboxDetail_InboxReply" />
+      <nodes>
+        <classShapeMoniker Id="8caee1fa-27dd-4209-a38c-8fb07edcee90" />
+        <classShapeMoniker Id="42799ee9-3850-4832-a56a-edb65e4a038a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 2.47199625651042); (9.125 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LumenChatterBotDBDataContext/InboxMain/InboxMain_InboxDetail" />
+      <nodes>
+        <classShapeMoniker Id="ba3eefc7-6f40-4947-8451-bf547dd803e2" />
+        <classShapeMoniker Id="8caee1fa-27dd-4209-a38c-8fb07edcee90" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

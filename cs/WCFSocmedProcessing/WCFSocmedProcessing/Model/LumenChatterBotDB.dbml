@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LumenChatterBot3" Class="LumenChatterBotDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NOTEBOOK164\SQL2008DB;Initial Catalog=LumenChatterBot3;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LumenChatterBot3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EventLog" Member="EventLogs">
+    <Type Name="EventLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogType" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsError" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Master_LogType_EventLog" Member="Master_LogType" ThisKey="LogType" OtherKey="TypeName" Type="Master_LogType" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sent_Facebook_ReplyCoversation" Member="Sent_Facebook_ReplyCoversations">
+    <Type Name="Sent_Facebook_ReplyCoversation">
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdInboxFb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Inbox_Facebook_Sent_Facebook_ReplyCoversation" Member="Inbox_Facebook" ThisKey="IdInboxFb" OtherKey="Id" Type="Inbox_Facebook" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Sent_Facebook_Sent_Facebook_ReplyCoversation" Member="Sent_Facebook" ThisKey="Id" OtherKey="Id" Type="Sent_Facebook" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.General_Variable" Member="General_Variables">
+    <Type Name="General_Variable">
+      <Column Name="VariableName" Type="System.String" DbType="VarChar(500) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inbox" Member="Inboxes">
+    <Type Name="Inbox">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FromName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CcName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CcAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BodyTextPlain" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BodyHtml" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BodyComposite" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsAttachment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsFiltered" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReplyToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ReplyToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Inbox_Inbox_Facebook" Member="Inbox_Facebook" ThisKey="Id" OtherKey="Id" Type="Inbox_Facebook" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inbox_Facebook" Member="Inbox_Facebooks">
+    <Type Name="Inbox_Facebook">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdMessageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FromNameFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromAddressFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsAnalized" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Inbox_Facebook_Sent_Facebook_ReplyCoversation" Member="Sent_Facebook_ReplyCoversations" ThisKey="Id" OtherKey="IdInboxFb" Type="Sent_Facebook_ReplyCoversation" />
+      <Association Name="Inbox_Inbox_Facebook" Member="Inbox" ThisKey="Id" OtherKey="Id" Type="Inbox" IsForeignKey="true" />
+      <Association Name="Master_MessageType_Inbox_Facebook" Member="Master_MessageType" ThisKey="IdMessageType" OtherKey="Id" Type="Master_MessageType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_FacebookFriend" Member="Master_FacebookFriends">
+    <Type Name="Master_FacebookFriend">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FbName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FbEmail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Hometown" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FbId" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_FileType" Member="Master_FileTypes">
+    <Type Name="Master_FileType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.Data.Linq.Binary" DbType="VarBinary(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Master_FileType_Sent_Attachment" Member="Sent_Attachments" ThisKey="Type" OtherKey="FileType" Type="Sent_Attachment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_Function" Member="Master_Functions">
+    <Type Name="Master_Function">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsParameter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Master_Function_Master_FunctionParameter" Member="Master_FunctionParameters" ThisKey="Id" OtherKey="IdMFunction" Type="Master_FunctionParameter" />
+      <Association Name="Master_Function_Master_SchedulerDetail" Member="Master_SchedulerDetails" ThisKey="Id" OtherKey="IdFunctionToCall" Type="Master_SchedulerDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_FunctionParameter" Member="Master_FunctionParameters">
+    <Type Name="Master_FunctionParameter">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdMFunction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParameterValue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParameterSequence" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="Master_Function_Master_FunctionParameter" Member="Master_Function" ThisKey="IdMFunction" OtherKey="Id" Type="Master_Function" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_KeyReply" Member="Master_KeyReplies">
+    <Type Name="Master_KeyReply">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyWord" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Master_KeyReply_Master_ReplyDetail" Member="Master_ReplyDetails" ThisKey="Id" OtherKey="IdMKeyReply" Type="Master_ReplyDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_KeyStatus" Member="Master_KeyStatus">
+    <Type Name="Master_KeyStatus">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyWord" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Master_KeyStatus_Master_StatusDetail" Member="Master_StatusDetails" ThisKey="Id" OtherKey="IdMKeyStatus" Type="Master_StatusDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_LogType" Member="Master_LogTypes">
+    <Type Name="Master_LogType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Master_LogType_EventLog" Member="EventLogs" ThisKey="TypeName" OtherKey="LogType" Type="EventLog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_MessageType" Member="Master_MessageTypes">
+    <Type Name="Master_MessageType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Master_MessageType_Inbox_Facebook" Member="Inbox_Facebooks" ThisKey="Id" OtherKey="IdMessageType" Type="Inbox_Facebook" />
+      <Association Name="Master_MessageType_Sent_Facebook" Member="Sent_Facebooks" ThisKey="Id" OtherKey="IdMessageType" Type="Sent_Facebook" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_ReplyDetail" Member="Master_ReplyDetails">
+    <Type Name="Master_ReplyDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdMKeyReply" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Master_KeyReply_Master_ReplyDetail" Member="Master_KeyReply" ThisKey="IdMKeyReply" OtherKey="Id" Type="Master_KeyReply" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_Scheduler" Member="Master_Schedulers">
+    <Type Name="Master_Scheduler">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Master_Scheduler_Master_SchedulerDetail" Member="Master_SchedulerDetails" ThisKey="Id" OtherKey="IdMScheduler" Type="Master_SchedulerDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_SchedulerDetail" Member="Master_SchedulerDetails">
+    <Type Name="Master_SchedulerDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ExecuteTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="IdMScheduler" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFunctionToCall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Master_Function_Master_SchedulerDetail" Member="Master_Function" ThisKey="IdFunctionToCall" OtherKey="Id" Type="Master_Function" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Master_Scheduler_Master_SchedulerDetail" Member="Master_Scheduler" ThisKey="IdMScheduler" OtherKey="Id" Type="Master_Scheduler" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Master_StatusDetail" Member="Master_StatusDetails">
+    <Type Name="Master_StatusDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdMKeyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsPosted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Master_KeyStatus_Master_StatusDetail" Member="Master_KeyStatus" ThisKey="IdMKeyStatus" OtherKey="Id" Type="Master_KeyStatus" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sent_Attachment" Member="Sent_Attachments">
+    <Type Name="Sent_Attachment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FileType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FilePath" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdSent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Master_FileType_Sent_Attachment" Member="Master_FileType" ThisKey="FileType" OtherKey="Type" Type="Master_FileType" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Sent_Sent_Attachment" Member="Sent" ThisKey="IdSent" OtherKey="Id" Type="Sent" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Inbox_Facebook" Member="View_Inbox_Facebooks">
+    <Type Name="View_Inbox_Facebook">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromNameFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FromAddressFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsAnalized" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdMessageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ReplyToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ReplyToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Master_KeyReply" Member="View_Master_KeyReplies">
+    <Type Name="View_Master_KeyReply">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdMKeyReply" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameMKeyReply" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Master_KeyStatus" Member="View_Master_KeyStatus">
+    <Type Name="View_Master_KeyStatus">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdMKeyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameMKeyStatus" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsPosted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_ScheduleDetail" Member="View_ScheduleDetails">
+    <Type Name="View_ScheduleDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ExecuteTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="IdMScheduler" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSchedulerName" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IdFunctionToCall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionToCallName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsParameter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMScheduleActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsScheduleDetailActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_ScheduleDetailWithFuncDescription" Member="View_ScheduleDetailWithFuncDescriptions">
+    <Type Name="View_ScheduleDetailWithFuncDescription">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ExecuteTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="IdMScheduler" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSchedulerName" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IdFunctionToCall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionToCallName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FunctionDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsParameter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMScheduleActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsScheduleDetailActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Sent_Facebook" Member="View_Sent_Facebooks">
+    <Type Name="View_Sent_Facebook">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdMessageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToNameFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddressFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BodyTextPlain" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsAttachment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsScheduled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sent_Facebook" Member="Sent_Facebooks">
+    <Type Name="Sent_Facebook">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdMessageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ToNameFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddressFb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Sent_Facebook_Sent_Facebook_ReplyCoversation" Member="Sent_Facebook_ReplyCoversations" ThisKey="Id" OtherKey="Id" Type="Sent_Facebook_ReplyCoversation" />
+      <Association Name="Master_MessageType_Sent_Facebook" Member="Master_MessageType" ThisKey="IdMessageType" OtherKey="Id" Type="Master_MessageType" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Sent_Sent_Facebook" Member="Sent" ThisKey="Id" OtherKey="Id" Type="Sent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sent" Member="Sents">
+    <Type Name="Sent">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FromName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CcName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CcAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BodyTextPlain" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BodyHtml" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BodyComposite" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsAttachment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsScheduled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Sent_Sent_Attachment" Member="Sent_Attachments" ThisKey="Id" OtherKey="IdSent" Type="Sent_Attachment" />
+      <Association Name="Sent_Sent_Facebook" Member="Sent_Facebook" ThisKey="Id" OtherKey="Id" Type="Sent_Facebook" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Sent_Attachment" Member="View_Sent_Attachments">
+    <Type Name="View_Sent_Attachment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FileType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FilePath" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdSent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FromName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BodyTextPlain" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsAttachment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsScheduled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

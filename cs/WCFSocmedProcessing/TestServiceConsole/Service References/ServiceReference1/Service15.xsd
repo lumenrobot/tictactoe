@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+  <xs:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfSent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sent" nillable="true" type="tns:Sent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSent" nillable="true" type="tns:ArrayOfSent" />
+  <xs:complexType name="Sent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyComposite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyHtml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTextPlain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CcAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CcName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FromAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachment" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsScheduled" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Sent_Attachments" nillable="true" type="tns:ArrayOfSent_Attachment" />
+      <xs:element minOccurs="0" name="Sent_Facebook" nillable="true" type="tns:Sent_Facebook" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sent" nillable="true" type="tns:Sent" />
+  <xs:complexType name="ArrayOfSent_Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sent_Attachment" nillable="true" type="tns:Sent_Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSent_Attachment" nillable="true" type="tns:ArrayOfSent_Attachment" />
+  <xs:complexType name="Sent_Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="FileSize" nillable="true" type="q1:Binary" />
+      <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Master_FileType" nillable="true" type="tns:Master_FileType" />
+      <xs:element minOccurs="0" name="Sent" nillable="true" type="tns:Sent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sent_Attachment" nillable="true" type="tns:Sent_Attachment" />
+  <xs:complexType name="Master_FileType">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="Description" nillable="true" type="q2:Binary" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Sent_Attachments" nillable="true" type="tns:ArrayOfSent_Attachment" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Master_FileType" nillable="true" type="tns:Master_FileType" />
+  <xs:complexType name="Sent_Facebook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMessageType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Master_MessageType" nillable="true" type="tns:Master_MessageType" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sent" nillable="true" type="tns:Sent" />
+      <xs:element minOccurs="0" name="ToAddressFb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToNameFb" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sent_Facebook" nillable="true" type="tns:Sent_Facebook" />
+  <xs:complexType name="Master_MessageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inbox_Facebooks" nillable="true" type="tns:ArrayOfInbox_Facebook" />
+      <xs:element minOccurs="0" name="Sent_Facebooks" nillable="true" type="tns:ArrayOfSent_Facebook" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Master_MessageType" nillable="true" type="tns:Master_MessageType" />
+  <xs:complexType name="ArrayOfInbox_Facebook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Inbox_Facebook" nillable="true" type="tns:Inbox_Facebook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInbox_Facebook" nillable="true" type="tns:ArrayOfInbox_Facebook" />
+  <xs:complexType name="Inbox_Facebook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FromAddressFb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromNameFb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMessageType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Inbox" nillable="true" type="tns:Inbox" />
+      <xs:element minOccurs="0" name="IsAnalized" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Master_MessageType" nillable="true" type="tns:Master_MessageType" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Inbox_Facebook" nillable="true" type="tns:Inbox_Facebook" />
+  <xs:complexType name="Inbox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyComposite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyHtml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTextPlain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CcAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CcName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inbox_Facebook" nillable="true" type="tns:Inbox_Facebook" />
+      <xs:element minOccurs="0" name="IsAttachment" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFiltered" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReplyToAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplyToName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Inbox" nillable="true" type="tns:Inbox" />
+  <xs:complexType name="ArrayOfSent_Facebook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sent_Facebook" nillable="true" type="tns:Sent_Facebook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSent_Facebook" nillable="true" type="tns:ArrayOfSent_Facebook" />
+  <xs:complexType name="ArrayOfView_ScheduleDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_ScheduleDetail" nillable="true" type="tns:View_ScheduleDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_ScheduleDetail" nillable="true" type="tns:ArrayOfView_ScheduleDetail" />
+  <xs:complexType name="View_ScheduleDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExecuteTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="FunctionToCallName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFunctionToCall" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMScheduler" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsMScheduleActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsParameter" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsScheduleDetailActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MSchedulerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_ScheduleDetail" nillable="true" type="tns:View_ScheduleDetail" />
+</xs:schema>

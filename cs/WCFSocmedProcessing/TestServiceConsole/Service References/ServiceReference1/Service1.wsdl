@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" />
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+      <xsd:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_TestWcfHelloWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestWcfHelloWord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TestWcfHelloWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestWcfHelloWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostImageStatusUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostImageStatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostImageStatusUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostImageStatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDraftMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDraftMail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDraftMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDraftMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocInfo">
+    <wsdl:part name="parameters" element="tns:DocInfo" />
+  </wsdl:message>
+  <wsdl:message name="DocInfo_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="FileSize" element="tns:FileSize" />
+    <wsdl:part name="Id" element="tns:Id" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadImageStatus_OutputMessage" />
+  <wsdl:message name="IService1_RetrieveInboxMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveInboxMail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RetrieveInboxMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveInboxMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FilterInboxFacebook_InputMessage">
+    <wsdl:part name="parameters" element="tns:FilterInboxFacebook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FilterInboxFacebook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FilterInboxFacebookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AnalizeFacebookResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnalizeFacebookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AnalizeFacebookResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnalizeFacebookResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentDraftMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SentDraftMail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentDraftMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SentDraftMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SaveDraftMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDraftMail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SaveDraftMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDraftMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SmartReplyDraftCreation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SmartReplyDraftCreation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SmartReplyDraftCreation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SmartReplyDraftCreationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SmartUpdateStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SmartUpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SmartUpdateStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SmartUpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentHappyBirthday_InputMessage">
+    <wsdl:part name="parameters" element="tns:SentHappyBirthday" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentHappyBirthday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SentHappyBirthdayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentWeatherInfoToday_InputMessage">
+    <wsdl:part name="parameters" element="tns:SentWeatherInfoToday" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SentWeatherInfoToday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SentWeatherInfoTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExecuteSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExecuteSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="TestWcfHelloWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TestWcfHelloWord" message="tns:IService1_TestWcfHelloWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TestWcfHelloWordResponse" message="tns:IService1_TestWcfHelloWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostImageStatusUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostImageStatusUpdate" message="tns:IService1_PostImageStatusUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostImageStatusUpdateResponse" message="tns:IService1_PostImageStatusUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDraftMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateDraftMail" message="tns:IService1_CreateDraftMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateDraftMailResponse" message="tns:IService1_CreateDraftMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadImageStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadImageStatus" name="DocInfo" message="tns:DocInfo" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadImageStatusResponse" message="tns:IService1_UploadImageStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveInboxMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RetrieveInboxMail" message="tns:IService1_RetrieveInboxMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RetrieveInboxMailResponse" message="tns:IService1_RetrieveInboxMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterInboxFacebook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FilterInboxFacebook" message="tns:IService1_FilterInboxFacebook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FilterInboxFacebookResponse" message="tns:IService1_FilterInboxFacebook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnalizeFacebookResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AnalizeFacebookResponse" message="tns:IService1_AnalizeFacebookResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AnalizeFacebookResponseResponse" message="tns:IService1_AnalizeFacebookResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SentDraftMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SentDraftMail" message="tns:IService1_SentDraftMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SentDraftMailResponse" message="tns:IService1_SentDraftMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDraftMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SaveDraftMail" message="tns:IService1_SaveDraftMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SaveDraftMailResponse" message="tns:IService1_SaveDraftMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SmartReplyDraftCreation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SmartReplyDraftCreation" message="tns:IService1_SmartReplyDraftCreation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SmartReplyDraftCreationResponse" message="tns:IService1_SmartReplyDraftCreation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SmartUpdateStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SmartUpdateStatus" message="tns:IService1_SmartUpdateStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SmartUpdateStatusResponse" message="tns:IService1_SmartUpdateStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SentHappyBirthday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SentHappyBirthday" message="tns:IService1_SentHappyBirthday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SentHappyBirthdayResponse" message="tns:IService1_SentHappyBirthday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SentWeatherInfoToday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SentWeatherInfoToday" message="tns:IService1_SentWeatherInfoToday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SentWeatherInfoTodayResponse" message="tns:IService1_SentWeatherInfoToday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadSchedule" message="tns:IService1_LoadSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadScheduleResponse" message="tns:IService1_LoadSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExecuteSchedule" message="tns:IService1_ExecuteSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExecuteScheduleResponse" message="tns:IService1_ExecuteSchedule_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestWcfHelloWord">
+      <soap:operation soapAction="http://tempuri.org/IService1/TestWcfHelloWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostImageStatusUpdate">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostImageStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDraftMail">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateDraftMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadImageStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadImageStatus" style="document" />
+      <wsdl:input name="DocInfo">
+        <soap:header message="tns:DocInfo_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:DocInfo_Headers" part="FileSize" use="literal" />
+        <soap:header message="tns:DocInfo_Headers" part="Id" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveInboxMail">
+      <soap:operation soapAction="http://tempuri.org/IService1/RetrieveInboxMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterInboxFacebook">
+      <soap:operation soapAction="http://tempuri.org/IService1/FilterInboxFacebook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnalizeFacebookResponse">
+      <soap:operation soapAction="http://tempuri.org/IService1/AnalizeFacebookResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentDraftMail">
+      <soap:operation soapAction="http://tempuri.org/IService1/SentDraftMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDraftMail">
+      <soap:operation soapAction="http://tempuri.org/IService1/SaveDraftMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartReplyDraftCreation">
+      <soap:operation soapAction="http://tempuri.org/IService1/SmartReplyDraftCreation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartUpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/SmartUpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentHappyBirthday">
+      <soap:operation soapAction="http://tempuri.org/IService1/SentHappyBirthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentWeatherInfoToday">
+      <soap:operation soapAction="http://tempuri.org/IService1/SentWeatherInfoToday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSchedule">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSchedule">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExecuteSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:5784/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

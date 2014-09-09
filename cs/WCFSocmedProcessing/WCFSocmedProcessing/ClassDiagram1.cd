@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WCFSocmedProcessing.Service1" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAQEAgAAAAAAAAAAAEAAIkAAAAAQABABAACQAAAE=</HashCode>
+      <FileName>Service1.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCFSocmedProcessing.Model.LumenChatterBotDBDataContext" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BSIagMYBYCAzACHEQ6SgDFEGSCIgAFKmgIhsEQvUARE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCFSocmedProcessing.Model.Master_KeyStatus" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgyIAABAAAAAAAAQAEAAAABjCAAAABCAAAAQAAUAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCFSocmedProcessing.Model.Master_Scheduler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAiEAABIAEhAAAAUAEAIIQFjCAAQABEAAQAAAAUAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCFSocmedProcessing.Model.Response" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Model\Response.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCFSocmedProcessing.Repository.ChatterBotRepository" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\ChatterBotRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCFSocmedProcessing.Repository.EmailHandlingRepository" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIEAAAAAAAQBgAAABIAACCAAQQAQAAAQQAAAoUA=</HashCode>
+      <FileName>Repository\EmailHandlingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCFSocmedProcessing.Repository.LumenChatterBotDBRepository" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAIAAAAAAiAEABYAAEAAACAgAgQFQBAACAACAAQA=</HashCode>
+      <FileName>Repository\LumenChatterBotDBRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WCFSocmedProcessing.IService1">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAQEAgAAAAAAAAAAAEAAIkAAAAAQABABAACQAAAE=</HashCode>
+      <FileName>IService1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

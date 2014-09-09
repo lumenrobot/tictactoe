@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LumenChatterBot" Class="LumenChatterBotDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NOTEBOOK164\SQL2008DB;Initial Catalog=LumenChatterBot;Integrated Security=True" SettingsObjectName="LumenChatterBot2.Properties.Settings" SettingsPropertyName="LumenChatterBotConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.KeyWordTbl" Member="KeyWordTbls">
+    <Type Name="KeyWordTbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyWord" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResponseTbl" Member="ResponseTbls">
+    <Type Name="ResponseTbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyWordId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Response" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_KeyWordResponse" Member="vw_KeyWordResponses">
+    <Type Name="vw_KeyWordResponse">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeyWordId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeyWord" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Response" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

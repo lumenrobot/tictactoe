@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+  <xs:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" />
+  <xs:import schemaLocation="http://localhost:5784/Service1.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="TestWcfHelloWord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestWcfHelloWordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestWcfHelloWordResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostImageStatusUpdate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostImageStatusUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDraftMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageToSent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDraftMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDraftMailResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/Message" name="FileContent" type="q1:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FileName" nillable="true" type="xs:string" />
+  <xs:element name="FileSize" type="xs:double" />
+  <xs:element name="Id" nillable="true" type="xs:string" />
+  <xs:element name="RetrieveInboxMail">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveInboxMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RetrieveInboxMailResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FilterInboxFacebook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FilterInboxFacebookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FilterInboxFacebookResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnalizeFacebookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnalizeFacebookResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AnalizeFacebookResponseResult" type="xs:boolean" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" minOccurs="0" name="draftSent" nillable="true" type="q2:ArrayOfSent" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" minOccurs="0" name="draftSentFacebook" nillable="true" type="q3:ArrayOfSent_Facebook" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idInboxList" nillable="true" type="q4:ArrayOfint" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentDraftMail">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentDraftMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SentDraftMailResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDraftMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" minOccurs="0" name="draftSent" nillable="true" type="q5:ArrayOfSent" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" minOccurs="0" name="draftSentFacebook" nillable="true" type="q6:ArrayOfSent_Facebook" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idInboxList" nillable="true" type="q7:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDraftMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDraftMailResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SmartReplyDraftCreation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SmartReplyDraftCreationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SmartReplyDraftCreationResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SmartUpdateStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SmartUpdateStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SmartUpdateStatusResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentHappyBirthday">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentHappyBirthdayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SentHappyBirthdayResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentWeatherInfoToday">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentWeatherInfoTodayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SentWeatherInfoTodayResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateNow" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadScheduleResult" type="xs:boolean" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFSocmedProcessing.Model" minOccurs="0" name="listScheduler" nillable="true" type="q8:ArrayOfView_ScheduleDetail" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="functionName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteScheduleResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messageInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
